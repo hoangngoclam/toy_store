@@ -1,0 +1,3 @@
+file này chứa danh sách các đường link trong trang web
+
+'/database'=> đường link tạo cấu trúc database cho trang web

@@ -1,0 +1,61 @@
+yêu cầu:
+
+Trang web bán đồ chơi trẻ em:
+- Trang web hiển thị danh sách sản phẩm, có sản phẩm đang hot nhất, sản phầm bán chạy nhất.
+- User đăng nhập vào hệ thống để mua hàng
+- User có thể xem danh sách sản phẩm của mình đã chọn (thêm xóa sửa sản phẩm)
+- user có thể xem các đơn hàng đã mua, xem trạng thái của đơn hàng (đang chuẩn bị giao hàng,đang giao, đã giao hàng)
+- các danh mục chứa các loại sản phẩm và trong từng loại sản phẩm được chia ra nhiều kiểu sản phẩm và sau đó có sản phẩm
+- trong từng loại sản phẩm biết được sản phẩm nào bán chạy nhất.
+- từng loại sản phẩm phải biết giá của nó, biết nó thuộc kiểu sản phẩm nào, số lượng, hảng sản xuất.
+
+thông qua những yêu cầu trên thì lên database như sau:
+
+khach_hang
+    name
+    phone
+    email
+    address
+    phone number
+    password
+san_pham
+    name
+    id kieu sp
+    id nha cung cap
+    chat lieu chinh
+    xuat su
+    so luong
+    gia ban
+    gia nhap
+    so lan xem
+danh_muc
+    id danh_muc
+    ten danh_muc
+loai_sp
+    id loai sp
+    id danh muc
+    ten loai
+kieu_sp
+    id kieu sp
+    id loai_sp
+    ten kieu_sp
+danh_sach_sp
+    id_sp
+    id_khach_hang
+    id_hoadon
+    trang thai
+hoa_don
+    id
+    id_khach_hang
+    trang thai
+    yeu cau cua khach_hang
+    tong tien
+nha_cung_cap
+    id
+    ten
+    diachi
+    so dien thoai
+    
+
+
+

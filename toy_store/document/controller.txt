@@ -1,0 +1,3 @@
+các controller sử dụng trong project:
+
+1.DatabaseController: dùng để code Schema tạo cấu trúc bản cho project 
