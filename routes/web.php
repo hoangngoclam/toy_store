@@ -14,5 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('trang_chu', function () {
+    return view('trangChu',['error' => NULL]);
+});
 
 Route::get('database','DatabaseController@getCreateTables');
+Route::post('test','DatabaseController@testController');
