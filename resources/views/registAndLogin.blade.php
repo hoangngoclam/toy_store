@@ -1,4 +1,4 @@
 @extends('layout.index')
 @section('content')
-    <h1>This is content</h1>
+    <h1>Trang đăng nhập, đăng ký</h1>
 @endsection

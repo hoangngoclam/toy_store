@@ -11,12 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('trang_chu', function () {
-    return view('trangChu',['error' => NULL]);
-});
-
+Route::get('/','TrangChuController@getTrangChu');
 Route::get('database','DatabaseController@getCreateTables');
-Route::post('test','DatabaseController@testController');
+Route::group(['prefix' => '/'], function () {
+    Route::get('gop_y', 'TrangChuController@getFeedBack');
+    Route::get('dang_nhap','TrangChuController@getRegisterAndLogin');
+    Route::get('dang_ky','TrangChuController@getRegisterAndLogin');
+});
