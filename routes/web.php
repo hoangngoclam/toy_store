@@ -17,4 +17,4 @@ Route::group(['prefix' => '/'], function () {
     Route::get('gop_y', 'TrangChuController@getFeedBack');
     Route::get('dang_nhap','TrangChuController@getRegisterAndLogin');
     Route::get('dang_ky','TrangChuController@getRegisterAndLogin');
-});
+}); 
