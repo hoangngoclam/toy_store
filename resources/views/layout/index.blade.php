@@ -8,10 +8,13 @@
     <title>@yield('title_page')</title>
     <base href="{{asset('')}}">
     <link rel="stylesheet" href="css/app.css"/>
+    
+    @yield("css")
 </head>
 <body>
     @include('layout.header')
     @yield('content')
     @include('layout.footer')
+    @yield("js")
 </body>
 </html>

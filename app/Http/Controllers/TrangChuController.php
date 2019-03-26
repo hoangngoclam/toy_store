@@ -16,4 +16,10 @@ class TrangChuController extends Controller
     function getRegisterAndLogin(){
         return view('registAndLogin');
     }
+    function getChiTiecSanPham(){
+        return view('Products/chiTietSanPham');
+    }
+    function getGioHang(){
+        return view('Products/gioHang');
+    }
 }
