@@ -1,0 +1,59 @@
+html, body {
+    font-family: 'Numans', sans-serif;
+}
+.backgound_header{
+    background:url(./images/21.jpg);
+}
+.input_header {
+    width: 70%;
+}
+
+.btn_giohang {
+    width: 20%;
+}
+
+.card {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.nav-link {
+    margin-top: 0;
+}
+
+.nav_bar {
+    padding-top: 2px;
+    padding-bottom: 0px;
+    border-bottom: solid 1px #fbca00;
+    font-size: 12px
+}
+
+
+
+.a_header {
+    color: rgb(3, 3, 3)
+}
+
+.i_header {
+    margin-right: 25px
+}
+
+.btn_search {
+    border-bottom-left-radius: 0%;
+    border-top-left-radius: 0;
+    position: absolute;
+    right: 16px;
+}
+
+.nav_bottom {
+    padding-top: 0px;
+    padding-bottom: 25px;
+    border-bottom: solid 2px #fbca00;
+}
+
+.btn_icon {
+    width: 35px;
+    margin-left: 1px;
+    margin-right: 1px;
+    height: 30px;
+}
