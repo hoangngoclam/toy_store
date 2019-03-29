@@ -93,10 +93,10 @@ class DatabaseController extends Controller
             $table->increments("id");
             $table->integer("id_kh")->unsigned();
             $table->string("trang_thai",50);
-            $table->text("yeu_cau");
-            $table->string("tong_tien",20);
-            $table->string("noi_nhan",20);
-            $table->string("so_dien_thoai_nhan",12);
+            $table->text("yeu_cau")->nullable(true);
+            $table->string("tong_tien",20)->nullable(true);
+            $table->string("noi_nhan",20)->nullable(true);
+            $table->string("so_dien_thoai_nhan",12)->nullable(true);
             $table->timestamps();
             $table->foreign('id_kh')->references('id')->on('khach_hang');
             

@@ -9,7 +9,7 @@ class DanhSachSP extends Model
     protected $table = 'danh_sach_sp';
     public function sanpham()
     {
-        return $this->hasOne('App\SanPham', 'id_sp');
+        return $this->belongsTo('App\SanPham', 'id_sp');
     }
     public function hoadon()
     {

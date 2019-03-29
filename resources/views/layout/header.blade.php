@@ -30,20 +30,20 @@
             </div>
             <div class="col-xs-6 col-sm-5 col-md-7 col-lg-8 col-xm-8"
                 style="display: flex; align-items: center;position: relative ; margin-bottom: 4px">
-                <form class="form-inline" style="width: 100%;">
+                <form class="form-inline input-group-lg" style="width: 100%;">
                     <input class=" form-control mr-sm-6" type="text" placeholder="Tìm kiếm sản phẩm..."
                         style="width: 100%">
-                    <button type=" button" class="btn btn-warning btn_search"><i
+                    <button type=" button" class="btn btn-warning btn_search btn-lg"><i
                         class="fas fa-search mr-2"></i>Tìm kiếm</button>
                 </form>
             </div>
             <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 col-xm-2 justify-content-end "
                 style="display: flex; align-items: center; magin-bottom:4px">
-                <button type="button" class="btn btn-warning">
+                <a type="button" class="btn btn-warning" href="./gio_hang/1">
                     <i class="fas fa-cart-plus mr-1" ></i>
                         Giỏ hàng
                     <span class="badge badge-dark ml-1" >1</span>
-                </button>
+                </a>
             </div>
         </div>
     </div>

@@ -6,7 +6,7 @@
     <div class="container-fluid container_fluid" id="watch">
         <div class="row">
             <div class="card col-xs-5 col-sm-6 col-md-5 col-lg-5 col-xm-2" >
-                <div class=" w-100 card-img-top" style="background-image: url('images/7.jpg');">
+                <div class=" w-100 card-img-top" style="background-image: url('{{$sanpham->hinh_anh}}');">
                 </div>
                 <hr>
                 <div class="images">
@@ -73,7 +73,7 @@
             <div class="card col-xs-7 col-sm-6 col-md-7 col-lg-7 col-xm-2 p-0">
                 <div class="card-body">
                     <div style="height: 60px;">
-                            <h4 class="mb-0"">Máy bay trực thăng di chuyển phát nhạc</h4>
+                            <h4 class="mb-0"">{{$sanpham->ten}}</h4>
                     </div>
                     <div>
                         <span class="star">
@@ -82,8 +82,8 @@
                     </div>
                     <hr>
                     <div class="alert alert-secondary" role="alert">
-                            <span class="gia">1.150.000₫</span>
-                            <span class="giamGia">2.000.000₫</span>
+                            <span class="gia">{{ $sanpham->gia_nhap }}₫</span>
+                            <span class="giamGia">{{ $sanpham->gia_ban }}₫</span>
                             <span class="badge badge-danger ">GIẢM 44%</span>
                     </div>
 
@@ -106,7 +106,7 @@
                     </div>
                     <hr style="margin-top:23px;margin-bottom:24px;">
                     <div style="display:flex">
-                            <button class="btn btn-danger btn_them" type="button"> Thêm vào giỏ <i class="fas fa-cart-plus" style="margin-right:8px;"></i></button>
+                            <a class="btn btn-danger btn_them" href="./gio_hang/them_sp/{{ $sanpham->id }}" type="button"> Thêm vào giỏ <i class="fas fa-cart-plus" style="margin-right:8px;"></i></a>
                             <button class="btn btn-danger btn_mua" type="button">Mua ngay</button>
                     </div>
                 </div>
