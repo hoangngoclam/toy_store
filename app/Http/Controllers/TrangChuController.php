@@ -39,6 +39,7 @@ class TrangChuController extends Controller
     function getThemSanPham($id){
         $hoadon = HoaDon::where("id_kh","=",1)->where("trang_thai","=","Dang_chon")->get();
         if(count($hoadon)){
+            
             DanhSachSP::insertGetId(["id_hd"=>$hoadon[0]->id,"id_sp"=>$id,"trang_thai"=>"Dang_chon"]);
         }
         else{

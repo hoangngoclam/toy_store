@@ -106,6 +106,7 @@ class DatabaseController extends Controller
             $table->integer("id_sp")->unsigned();
             $table->integer("id_kh")->unsigned();
             $table->integer("id_hd")->unsigned();
+            $table->integer("so_luong");
             $table->string("trang_thai",10);
             $table->timestamps();
             $table->foreign('id_sp')->references('id')->on('san_pham');
