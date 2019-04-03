@@ -1,0 +1,38 @@
+.row_magin {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.card_magin{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.card_img_top{
+    height: 200px; background-position: center;background-size:cover;
+}
+.card_body_h6 {
+    color: #f57224;
+    margin-top: 3px;
+    margin-bottom: 0px;
+}
+
+.card_body_span1 {
+    text-decoration: line-through;
+    font-size: 11px;
+    color: #9e9e9e;
+}
+
+.card_body_span2 {
+    font-size: 14px;
+    color: #9e9e9e;
+}
+
+.card_body_a {
+    width: 100%;
+    margin-top: 7px;
+}
+
+.card_x {
+    padding: 0px;
+}
+
+
