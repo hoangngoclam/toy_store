@@ -1,0 +1,1 @@
+gio t làm một cái đang ki riêng cx đc nha, cho nó nhanh 
