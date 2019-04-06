@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use App\DanhSachSP;
 use App\HoaDon;
+use App\KhachHang;
 use App\SanPham;
+use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Symfony\Component\HttpFoundation\Request;
-use App\KhachHang;
-use App\User;
 
 class TrangChuController extends Controller
 {
@@ -23,24 +23,24 @@ class TrangChuController extends Controller
     {
         return view('registAndLogin');
     }
-    public function postLogin(Request $request){
-        $user = KhachHang::where("ten","=",$request->user_name)->where("mat_khau","=",$request->password)->first();
-        if($user){
-            return Redirect("/")->with("user",$user);
-        }
-        else{
+    public function postLogin(Request $request)
+    {
+        $user = KhachHang::where("ten", "=", $request->user_name)->where("mat_khau", "=", $request->password)->first();
+        if ($user) {
+            return Redirect("/")->with("user", $user);
+        } else {
             $error = 'Tên hoặc mật khẩu không chính xác';
-            return view('registAndLogin')->with("thong_bao",$error);
+            return view('registAndLogin')->with("thong_bao", $error);
         }
     }
-    public function postRegister(Request $request){
-        $user = new User;
+    public function postRegister(Request $request)
+    {
+        $user = new KhachHang;
         $user->ten = $request->user_name;
         $user->email = $request->email;
         $user->mat_khau = $request->password;
-        $user->timestamps();
         $user->save();
-        return Redirect("/")->with("user",$user);
+        return Redirect("/")->with("user", $user);
     }
     public function getChiTiecSanPham($id)
     {
