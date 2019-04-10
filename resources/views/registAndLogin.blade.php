@@ -56,7 +56,7 @@
                                 </div>
                                 <input type="password" name="password" class="form-control" placeholder="Mật khẩu">
                             </div>
-                            @if ($thong_bao)
+                            @if (isset($thong_bao))
                                 <div class="form-group"> 
                                     <div class="alert alert-danger" role="alert">
                                         {{ $thong_bao }}

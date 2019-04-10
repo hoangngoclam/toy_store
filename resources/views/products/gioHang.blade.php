@@ -63,12 +63,12 @@
             <div class="card col-xs-5 col-sm-5 col-md-4 col-lg-3 col-xm-3">
                 <div class="tamTinh">
                     <span class="nhan"><strong>Tạm tính:</strong> </span>
-                    <span class="gia">1.555.550 ₫</span>
+                    <span class="gia">{{ $tongTien }} ₫</span>
                 </div>
                 <hr>
                 <div class="thanhTien">
                     <span class="icon"><i class="fas fa-file-invoice-dollar"></i></span>
-                    <span class="gia">1.150.000₫</span>
+                    <span class="gia">{{ $tongTien }} ₫</span>
                 </div>
                 <hr>
                 <button class="btn btn-danger btn_tinhTien" type="button">Tiến hành đặt hàng</button>

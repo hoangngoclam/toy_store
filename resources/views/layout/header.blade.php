@@ -17,7 +17,12 @@
             </div>
             <div class="header_right w-15">
                 <a href="#" class="a_header"><i class="fas fa-address-book i_header"> Gópý</i></a>
-                <a href="#" class="a_header"><i class="fas fa-user-circle"> Đăng kí / Đăngnhập</i></a>
+                @if(Session::has('khachhang'))
+                    <a href="#" class="a_header"> {{ Session::get('khachhang')->ten }}</a> <span> / </span>
+                    <a href="./dang_xuat" class="a_header">Đăng xuất</a>
+                @else
+                    <a href="./dang_nhap" class="a_header"><i class="fas fa-user-circle"> Đăng kí / Đăngnhập</i></a>
+                @endif
 
             </div>
         </div>
@@ -39,11 +44,20 @@
             </div>
             <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 col-xm-2 justify-content-end "
                 style="display: flex; align-items: center; magin-bottom:4px">
+                @if (Session::has('khachhang'))
+                    <a type="button" class="btn btn-warning" href="./gio_hang/{{ Session::get('khachhang')->id }}">
+                        <i class="fas fa-cart-plus mr-1" ></i>
+                            Giỏ hàng
+                        <span class="badge badge-dark ml-1" >1</span>
+                    </a>
+                @else
                 <a type="button" class="btn btn-warning" href="./gio_hang/1">
                     <i class="fas fa-cart-plus mr-1" ></i>
                         Giỏ hàng
                     <span class="badge badge-dark ml-1" >1</span>
                 </a>
+                @endif
+                
             </div>
         </div>
     </div>
