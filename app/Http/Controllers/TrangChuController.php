@@ -131,7 +131,10 @@ class TrangChuController extends Controller
         } 
         return Redirect('gio_hang/' . session()->get('khachhang')->id);
     }
-    public function postBuyProducts(){
+    public function getThongTinGiaoHang(){
+        return view('products/thongTinGiaoHang');
+    }
+    public function getMuaHang($id){
         
     }
     public function getDangXuat()

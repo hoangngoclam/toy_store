@@ -34,7 +34,6 @@
                                         <br>
                                         <span class="nguonSP">Cung cấp bới: <a href="#">{{ $item->sanpham->nhacc->ten }}</a> </span>
                                         <br>
-    
                                         <a href="./gio_hang/bo_sp/{{ $item->id_sp }}"> <button class="btn btn-outline-primary btn-sm" type="button">Bỏ
                                                 chọn</button></a>
                                         <br>
