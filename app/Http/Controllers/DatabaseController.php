@@ -104,10 +104,10 @@ class DatabaseController extends Controller
         });
         echo ("create table hoa_don success \n");
         Schema::create('danh_sach_sp', function ($table) {
+            $table->increments("id");
             $table->integer("id_sp")->unsigned();
             $table->integer("id_hd")->unsigned();
             $table->integer("so_luong");
-            $table->string("trang_thai", 10);
             $table->timestamps();
             $table->foreign('id_sp')->references('id')->on('san_pham');
             $table->foreign('id_hd')->references('id')->on('hoa_don');

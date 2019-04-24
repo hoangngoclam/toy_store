@@ -5,8 +5,16 @@
 @section('content')
     <div class="container-fluid" id="pay">
         <div class="row">
-            <div class="card col-xs-5 col-sm-7 col-md-8 col-lg-9 col-xm-9 ">
+            @if (count($dssp) == 0)
+                <div class="col-md-12 ">
+            @else
+                <div class="col-xs-5 col-sm-7 col-md-8 col-lg-9 col-xm-9 ">
+            @endif
                 <div class="container">
+                    @if (count($dssp) == 0)
+                        @component('products.gioHangTrong')
+                        @endcomponent
+                    @else
                     @foreach ($dssp as $item)
                     <div class="row">
                             <div class="col-xs-6 col-sm-12 col-md-3 col-lg-2 col-xm-9 ">
@@ -46,7 +54,7 @@
                                 <div style="display:flex; margin-top: 7px">
                                     <button type="button" class="btn btn-primary"
                                         style="width:35px;height:35px; background: white;border-radius:0; color: black; font-size: 12px">-</button>
-                                    <input type="text" class="form-control" value="1"
+                                    <input type="text" class="form-control" value={{ $item->so_luong }}
                                         style="width:50px; height:35px; text-align: center;border-left:0;border-right:0; border-color: #007bff; border-radius: 0">
                                     <button type="button" class="btn btn-primary"
                                         style="width:35px;height:35px; background: white;border-radius:0;color: black">+</button>
@@ -58,22 +66,24 @@
                         </div>
                     <hr>
                     @endforeach
+                    @endif
                 </div>
             </div>
-            <div class="card col-xs-5 col-sm-5 col-md-4 col-lg-3 col-xm-3">
-                <div class="tamTinh">
-                    <span class="nhan"><strong>Tạm tính:</strong> </span>
-                    <span class="gia">{{ $tongTien }} ₫</span>
+            @if (count($dssp) != 0)
+                <div class="card col-xs-5 col-sm-5 col-md-4 col-lg-3 col-xm-3">
+                    <div class="tamTinh">
+                        <span class="nhan"><strong>Tạm tính:</strong> </span>
+                        <span class="gia">{{ $tongTien }} ₫</span>
+                    </div>
+                    <hr>
+                    <div class="thanhTien">
+                        <span class="icon"><i class="fas fa-file-invoice-dollar"></i></span>
+                        <span class="gia">{{ $tongTien }} ₫</span>
+                    </div>
+                    <hr>
+                    <button class="btn btn-danger btn_tinhTien" type="button">Tiến hành đặt hàng</button>
                 </div>
-                <hr>
-                <div class="thanhTien">
-                    <span class="icon"><i class="fas fa-file-invoice-dollar"></i></span>
-                    <span class="gia">{{ $tongTien }} ₫</span>
-                </div>
-                <hr>
-                <button class="btn btn-danger btn_tinhTien" type="button">Tiến hành đặt hàng</button>
-            </div>
-
+            @endif
         </div>
     </div>
 @endsection

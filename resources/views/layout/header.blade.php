@@ -48,7 +48,7 @@
                     <a type="button" class="btn btn-warning" href="./gio_hang/{{ Session::get('khachhang')->id }}">
                         <i class="fas fa-cart-plus mr-1" ></i>
                             Giỏ hàng
-                        <span class="badge badge-dark ml-1" >1</span>
+                        <span id="number_product" class="badge badge-dark ml-1" >{{ Session::get('number_product') }}</span>
                     </a>
                 @else
                 <a type="button" class="btn btn-warning" href="./gio_hang/1">

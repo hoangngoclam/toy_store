@@ -18,6 +18,7 @@ Route::group(['prefix' => '/', 'middleware' => 'loginKH'], function () {
         Route::get('/{id}', 'TrangChuController@getGioHang');
         Route::get('/bo_sp/{id}', 'TrangChuController@getBoSanPham');
         Route::get('/them_sp/{id}', 'TrangChuController@getThemSanPham');
+        Route::get('/giam_sp/{id}', 'TrangChuController@getDecreaseProduct');
     });
     Route::get('dang_xuat', 'TrangChuController@getDangXuat');
 });
