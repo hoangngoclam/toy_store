@@ -10,7 +10,7 @@ class SanPham extends Model
 
     public function nhacc()
     {
-        return $this->hasOne('App\NhaCungCap', 'id_nha_cc');
+        return $this->belongsTo('App\NhaCungCap', 'id_nha_cc');
     }
     
     public function kieusp()

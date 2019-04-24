@@ -17,7 +17,12 @@
             </div>
             <div class="header_right w-15">
                 <a href="#" class="a_header"><i class="fas fa-address-book i_header"> Gópý</i></a>
-                <a href="#" class="a_header"><i class="fas fa-user-circle"> Đăng kí / Đăngnhập</i></a>
+                @if(Session::has('khachhang'))
+                    <a href="#" class="a_header"> {{ Session::get('khachhang')->ten }}</a> <span> / </span>
+                    <a href="./dang_xuat" class="a_header">Đăng xuất</a>
+                @else
+                    <a href="./dang_nhap" class="a_header"><i class="fas fa-user-circle"> Đăng kí / Đăngnhập</i></a>
+                @endif
 
             </div>
         </div>
@@ -30,20 +35,29 @@
             </div>
             <div class="col-xs-6 col-sm-5 col-md-7 col-lg-8 col-xm-8"
                 style="display: flex; align-items: center;position: relative ; margin-bottom: 4px">
-                <form class="form-inline" style="width: 100%;">
+                <form class="form-inline input-group-lg" style="width: 100%;">
                     <input class=" form-control mr-sm-6" type="text" placeholder="Tìm kiếm sản phẩm..."
                         style="width: 100%">
-                    <button type=" button" class="btn btn-warning btn_search"><i
+                    <button type=" button" class="btn btn-warning btn_search btn-lg"><i
                         class="fas fa-search mr-2"></i>Tìm kiếm</button>
                 </form>
             </div>
             <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 col-xm-2 justify-content-end "
                 style="display: flex; align-items: center; magin-bottom:4px">
-                <button type="button" class="btn btn-warning">
+                @if (Session::has('khachhang'))
+                    <a type="button" class="btn btn-warning" href="./gio_hang/{{ Session::get('khachhang')->id }}">
+                        <i class="fas fa-cart-plus mr-1" ></i>
+                            Giỏ hàng
+                        <span id="number_product" class="badge badge-dark ml-1" >{{ Session::get('number_product') }}</span>
+                    </a>
+                @else
+                <a type="button" class="btn btn-warning" href="./gio_hang/1">
                     <i class="fas fa-cart-plus mr-1" ></i>
                         Giỏ hàng
                     <span class="badge badge-dark ml-1" >1</span>
-                </button>
+                </a>
+                @endif
+                
             </div>
         </div>
     </div>

@@ -10,6 +10,6 @@ class DanhMuc extends Model
 
     public function loaisp()
     {
-        return $this->hasMany('App\LoaiSP', 'id_danh_muc');
+        return $this->hasMany('App\LoaiSP', 'id_danh_muc','id');
     }
 }
