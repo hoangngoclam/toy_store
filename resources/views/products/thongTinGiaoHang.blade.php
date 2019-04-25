@@ -4,91 +4,40 @@
 @endsection
 @section('content')
 <div class="container">
-    <div class="d-flex justify-content-center h-100">
-        <div class="card card_login">
-            <div class="card-header ">
-                <h3 id="btn-login">Đăng nhập</h3>
-
-            </div>
-            <div class="card-body">
-                <form action="./dang_nhap" method="POST">
-                    {{ csrf_field() }}
-                    <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-user"></i></span>
-                        </div>
-                        <input type="text" name="user_name" class="form-control" placeholder="Tên đăng nhập">
-
-                    </div>
-
-                    <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-key"></i></span>
-                        </div>
-                        <input type="password" name="password" class="form-control" placeholder="Mật khẩu">
-                    </div>
-                    @if (isset($thong_bao))
-                    <div class="form-group">
-                        <div class="alert alert-danger" role="alert">
-                            {{ $thong_bao }}
-                        </div>
-                    </div>
-                    @endif
-                    <div class="form-group">
-                        <input type="submit" value="Đăng nhập" class="btn float-left login_btn" style="width:100%">
-                    </div>
-                </form>
-            </div>
-
-        </div>
+    <div class="d-flex justify-content-center thongTin" >
         <div class="card">
-            <div class="card-header">
-                <h3>Đăng ký</h3>
-                <div class="d-flex justify-content-end social_icon">
-                    <span><i class="fab fa-facebook-square"></i></span>
-                    <span><i class="fab fa-google-plus-square"></i></span>
-                    <span><i class="fab fa-twitter-square"></i></span>
-                </div>
+            <div class="card-header text-center ">
+                <h3>Thông tin giao hàng</h3>
             </div>
-            <div class="card-body">
-                <form action="./dang_ky" method="POST" id="form-dk">
+            <div class="card-body" 
+                <form action="./thong_tin" method="POST" id="form-dk" >
                     {{ csrf_field() }}
-                    <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-user"></i></span>
-                        </div>
-                        <input type="text" id="dk_user_name" name="user_name" class="form-control"
-                            placeholder="Tên đăng nhập">
-
-                    </div>
-                    <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-envelope i_header"></i></span>
-                        </div>
-                        <input type="email" id="dk_email" name="email" class="form-control" placeholder="Email">
-                    </div>
-                    <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-key"></i></span>
-                        </div>
-                        <input type="password" id="dk_password" name="password" class="form-control"
-                            placeholder="Mật khẩu">
-                    </div>
-                    <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-key"></i></span>
-                        </div>
-                        <input type="password" id="dk_confirm_password" class="form-control"
-                            placeholder="Nhập lại mật khẩu">
-                    </div>
-                    <div class="form-group" id="error">
-
+                    <div class="form-group">
+                        <label for="usr">Tên người nhận</label>
+                        <input type="text" class="form-control" id="usr" name="name">
                     </div>
                     <div class="form-group">
-                        <button type="button" id="btn-dang-ky" class="btn float-right login_btn">
-                            Đăng ký
+                        <label for="usr">Số điện thoại</label>
+                        <input type="text" class="form-control" id="usr"name="phone_number">
+                    </div>
+                    <div class="form-group">
+                        <label for="usr">Địa chỉ giao hàng</label>
+                        <input type="text" class="form-control" id="usr"name="address">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comment">Yêu cầu</label>
+                        <textarea class="form-control" rows="3" id="comment" name="request"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <h4>Tổng tiền: <span>300.000đ</span> </h4>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" id="btn-dang-ky" class="btn btn-block float-right btn-warning">
+                           Mua hàng
                         </button>
                     </div>
+
                 </form>
             </div>
 

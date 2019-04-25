@@ -11,7 +11,7 @@ html, body {
 	align-content: center;
 }
 
-.card {
+#login .card {
 	border-radius: 0%;
 	height: 370px;
 	margin-top: 100px;
@@ -81,4 +81,19 @@ input:focus {
 
 .links a {
 	margin-left: 4px;
+}
+
+/* Thông tin giao hàng */
+.thongTin input{
+	height:32px;
+}
+.thongTin .card {
+	border-radius: 0%;
+	margin-bottom:10px;
+	margin-top:30px;
+	width: 500px;
+	border-radius: 5px;
+}
+.thongTin h3{
+	color:black;
 }
