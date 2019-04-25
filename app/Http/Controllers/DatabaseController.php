@@ -95,6 +95,7 @@ class DatabaseController extends Controller
             $table->integer("id_kh")->unsigned();
             $table->string("trang_thai", 50);
             $table->text("yeu_cau")->nullable(true);
+            $table->string("ten_nguoi_mua_hang", 50);
             $table->string("tong_tien", 20)->nullable(true);
             $table->string("noi_nhan", 20)->nullable(true);
             $table->string("so_dien_thoai_nhan", 12)->nullable(true);
