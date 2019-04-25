@@ -14,7 +14,8 @@ use Symfony\Component\HttpFoundation\Request;
 class TrangChuController extends Controller
 {
     const TrangThaiDangChon = "Dang_chon";
-    const TrangThaiDaChon = "DA_CHON";
+    const TrangThaiDaMua = "DA_MUA";
+
     public function __construct()
     {
         $danhMuc = DanhMuc::all();
@@ -135,8 +136,19 @@ class TrangChuController extends Controller
         return view('products/thongTinGiaoHang');
     }
     public function getMuaHang($id){
-        
+        $hoadon = HoaDon::find($id);
+        $hoadon->trang_thai = self::TrangThaiDaMua;
+        $hoadon->save();
+        $dssp = DanhSachSP::where("id_hd",$id)->get();
+        foreach ($dssp as $itemDSSP) {
+            $sanpham = SanPham::find($itemDSSP->id_sp);
+            if($sanpham){
+                $sanpham->so_luong -= $itemDSSP->so_luong;
+                $sanpham->save();
+            }
+        }
     }
+    public 
     public function getDangXuat()
     {
         session()->put('khachhang');

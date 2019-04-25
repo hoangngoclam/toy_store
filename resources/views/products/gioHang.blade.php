@@ -80,7 +80,7 @@
                         <span class="gia">{{ $tongTien }} ₫</span>
                     </div>
                     <hr>
-                    <button class="btn btn-danger btn_tinhTien" type="button">Tiến hành đặt hàng</button>
+                    <a href="./gio_hang/thong_tin/{{ Request::segment(2) }}" class="btn btn-danger btn_tinhTien" type="button">Tiến hành đặt hàng</a>
                 </div>
             @endif
         </div>
