@@ -148,7 +148,6 @@ class TrangChuController extends Controller
             }
         }
     }
-    public 
     public function getDangXuat()
     {
         session()->put('khachhang');

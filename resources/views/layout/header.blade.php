@@ -64,7 +64,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light nav_bottom ">
         <div class="container-fluid ">
-            <button class="navbar-toggler " data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav"
+            <button class="navbar-toggler justify-content-center " data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav"
                 aria-expanded="false" aria-label="Toggle navigation" style="height:35px; width:100%; margin-top:5px">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -101,7 +101,7 @@
 
                 <div>
                     <ul style="display:flex ;list-style: none; text-align:center ; padding-top:17px; margin-right: 0px;"
-                        class="justify-content-end">
+                        class="justify-content-center">
                         <li>
                             <a href="#"><button type="button" class="btn btn-primary btn-sm btn_icon"><i
                                         class="fab fa-facebook-f"></i></button></a>
