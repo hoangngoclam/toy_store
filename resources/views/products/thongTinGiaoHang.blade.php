@@ -9,8 +9,8 @@
             <div class="card-header text-center ">
                 <h3>Thông tin giao hàng</h3>
             </div>
-            <div class="card-body" 
-                <form action="./thong_tin" method="POST" id="form-dk" >
+            <div class="card-body" >
+                <form action="./gio_hang/thong_tin/1" method="POST" id="form-dk" >
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="usr">Tên người nhận</label>
@@ -33,7 +33,7 @@
                         <h4>Tổng tiền: <span>300.000đ</span> </h4>
                     </div>
                     <div class="form-group">
-                        <button type="button" id="btn-dang-ky" class="btn btn-block float-right btn-warning">
+                        <button type="submit" id="btn-dang-ky" class="btn btn-block float-right btn-warning">
                            Mua hàng
                         </button>
                     </div>
