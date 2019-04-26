@@ -110,7 +110,10 @@
     width: 100%;
 }
 .hinhAnhh{
-    background:url(../images/iconMuaHang.PNG) no-repeat; width:280px;height:220px; margin:auto
+    background:url(../images/iconMuaHang.PNG) no-repeat ; 
+    width:280px;
+    height:220px; 
+    margin:auto;
 }
 .btn_tiepTucMuaSam{
     margin-left:100px;
