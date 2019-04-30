@@ -6,7 +6,6 @@
 <header class="backgound_header" style="background:url(images/21.jpg);">
         <nav class="navbar navbar-expand-lg navbar-light bg-warning nav_bar">
         <div class="container-fluid">
-
             <div class="header_left w-85">
                 <a href="#" class="a_header"><i class="fas fa-phone-square i_header">
                         0384352233</i></a>
@@ -35,10 +34,16 @@
             </div>
             <div class="col-xs-6 col-sm-5 col-md-7 col-lg-8 col-xm-8"
                 style="display: flex; align-items: center;position: relative ; margin-bottom: 4px">
-                <form class="form-inline input-group-lg" style="width: 100%;">
-                    <input class=" form-control mr-sm-6" type="text" placeholder="Tìm kiếm sản phẩm..."
+                <form class="form-inline input-group-lg" style="width: 100%;" action="./tim_kiem" method="GET">
+                    {{ csrf_field() }}
+                    @if ($key != "")
+                        <input class=" form-control mr-sm-6" type="text" value={{$key}} placeholder="Tìm kiếm sản phẩm..." name="key"
                         style="width: 100%">
-                    <button type=" button" class="btn btn-warning btn_search btn-lg"><i
+                    @else
+                        <input class=" form-control mr-sm-6" type="text" placeholder="Tìm kiếm sản phẩm..." name="key"
+                            style="width: 100%">
+                    @endif
+                    <button type="submit" class="btn btn-warning btn_search btn-lg"><i
                         class="fas fa-search mr-2"></i>Tìm kiếm</button>
                 </form>
             </div>

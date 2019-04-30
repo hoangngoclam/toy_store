@@ -26,13 +26,15 @@ class TrangChuController extends Controller
     }
     public function getTrangChu()
     {
-
         $sanphams = DB::table('san_pham')->paginate(15);
-        return view('trangChu')->with("sanpham", $sanphams);
+        $data=["sanpham"=>$sanphams,"key"=>""];
+        return view('trangChu')->with($data);
     }
 
-    public function getSearchSP(){
-        // $sanpham = SanPham::
+    public function getTimKiemSP(Request $request){
+        $sanpham = SanPham::where("ten","LIKE","%".$request->key."%")->paginate(10);
+        $data=["sanpham"=>$sanpham,"key"=>$request->key];
+        return view('trangChu')->with($data);
     }
 
     public function getRegisterAndLogin()
