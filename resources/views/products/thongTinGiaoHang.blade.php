@@ -10,7 +10,7 @@
                 <h3>Thông tin giao hàng</h3>
             </div>
             <div class="card-body" >
-                <form action="./gio_hang/thong_tin/1" method="POST" id="form-dk" >
+                <form action="./gio_hang/thong_tin/{{ Request::segment(3) }}" method="POST" id="form-dk" >
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="usr">Tên người nhận</label>
@@ -27,10 +27,10 @@
                     
                     <div class="form-group">
                         <label for="comment">Yêu cầu</label>
-                        <textarea class="form-control" rows="3" id="comment" name="request"></textarea>
+                        <textarea class="form-control" rows="3" id="comment" name="request_hd"></textarea>
                     </div>
                     <div class="form-group">
-                        <h4>Tổng tiền: <span>300.000đ</span> </h4>
+                        <h4>Tổng tiền: <span>{{ $tong_tien }}đ</span> </h4>
                     </div>
                     <div class="form-group">
                         <button type="submit" id="btn-dang-ky" class="btn btn-block float-right btn-warning">
