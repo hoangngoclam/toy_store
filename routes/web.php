@@ -25,6 +25,7 @@ Route::group(['prefix' => '/', 'middleware' => 'loginKH'], function () {
     });
     Route::get('dang_xuat', 'TrangChuController@getDangXuat');
 });
+Route::get('kieu_sp/{id}','TrangChuController@getTimSPTheoKieuSP');
 Route::get('tim_kiem','TrangChuController@getTimKiemSP');
 Route::get('dang_nhap', 'TrangChuController@getRegisterAndLogin');
 Route::get('dang_ky', 'TrangChuController@getRegisterAndLogin');

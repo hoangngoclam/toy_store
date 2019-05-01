@@ -1,4 +1,5 @@
 
+
 @section('css')
    
 @endsection
@@ -36,8 +37,8 @@
                 style="display: flex; align-items: center;position: relative ; margin-bottom: 4px">
                 <form class="form-inline input-group-lg" style="width: 100%;" action="./tim_kiem" method="GET">
                     {{ csrf_field() }}
-                    @if ($key != "")
-                        <input class=" form-control mr-sm-6" type="text" value={{$key}} placeholder="Tìm kiếm sản phẩm..." name="key"
+                    @if (isset($key))
+                        <input class=" form-control mr-sm-6" type="text" value="{{ $key }}" placeholder="Tìm kiếm sản phẩm..." name="key"
                         style="width: 100%">
                     @else
                         <input class=" form-control mr-sm-6" type="text" placeholder="Tìm kiếm sản phẩm..." name="key"

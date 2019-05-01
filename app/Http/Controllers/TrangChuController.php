@@ -74,6 +74,11 @@ class TrangChuController extends Controller
         return Redirect("/")->with("user", $user);
     }
 
+    public function getTimSPTheoKieuSP($id){
+        $sanpham = SanPham::where("id_kieu_sp","=",$id)->paginate(15);
+        return view('trangChu')->with("sanpham",$sanpham);
+    }
+
     public function getChiTiecSanPham($id)
     {
         $sanpham = SanPham::find($id);
