@@ -41,7 +41,7 @@ class TrangChuController extends Controller
     {
         return view('registAndLogin');
     }
-
+   
     public function postLogin(Request $request)
     {
         $user = KhachHang::where("ten", "=", $request->user_name)->where("mat_khau", "=", $request->password)->first();
@@ -53,7 +53,6 @@ class TrangChuController extends Controller
                     $request->session()->put("number_product", count($dssp));
                 }
             }
-            
             $request->session()->put("number_product", 0);
             $request->session()->put('khachhang', $user);
             return Redirect("/")->with("user", $user);
@@ -195,4 +194,11 @@ class TrangChuController extends Controller
         session()->put('khachhang');
         return redirect('/');
     }
+
+
+    public function getAdminLogin()
+    {
+        return view('adminLogin');
+    }
 }
+

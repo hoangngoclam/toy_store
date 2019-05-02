@@ -33,3 +33,5 @@ Route::get('dang_ky', 'TrangChuController@getRegisterAndLogin');
 Route::post('dang_nhap', 'TrangChuController@postLogin');
 Route::post('dang_ky', 'TrangChuController@postRegister');
 Route::get('chi_tiet_sp/{id}', 'TrangChuController@getChiTiecSanPham');
+
+Route::get('dang_nhap_admin', 'TrangChuController@getAdminLogin');

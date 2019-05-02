@@ -5,8 +5,8 @@
 @endsection
 
 @section('content')
-
-{{-- {{ $danhmuc[0]->ten }}
+<!-- 
+{{ $danhmuc[0]->ten }}
 <ul>
     @foreach ($danhmuc[0]->loaisp as $loaisp)
     <li>{{ $loaisp->ten }}</li>
@@ -16,7 +16,7 @@
         @endforeach
     </ul>
     @endforeach
-</ul> --}}
+</ul> -->
 
 <div class="container-fluid mt-4">
     <div class="row row_magin">
