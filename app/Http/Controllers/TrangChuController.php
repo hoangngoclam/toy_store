@@ -35,14 +35,19 @@ class TrangChuController extends Controller
     {
         return view('registAndLogin');
     }
-
+   
     public function postLogin(Request $request)
     {
         $user = KhachHang::where("ten", "=", $request->user_name)->where("mat_khau", "=", $request->password)->first();
         if ($user) {
             $donhang = HoaDon::where("id_kh", "=", $user->id)->where("trang_thai", "=", self::TrangThaiDangChon)->first();
-            $dssp = DanhSachSP::where("id_hd", "=", $donhang->id)->get();
-            $request->session()->put("number_product", count($dssp));
+            if($donhang){
+                $dssp = DanhSachSP::where("id_hd", "=", $donhang->id)->get();
+                if($dssp){
+                    $request->session()->put("number_product", count($dssp));
+                }
+            }
+            $request->session()->put("number_product", 0);
             $request->session()->put('khachhang', $user);
             return Redirect("/")->with("user", $user);
         } else {
@@ -148,9 +153,27 @@ class TrangChuController extends Controller
             }
         }
     }
+    public function postThongTinGiaoHang($id,Request $request){
+        $hoadon = HoaDon::find($id);
+        $hoadon->trang_thai = "DA_MUA";
+        // $hoadon->ten_nguoi_nhan = $request->name;
+        // $hoadon->so_dien_thoai_nhan = $request->phone_number;
+        // $hoadon->noi_nhan = $request->address;
+        // $hoadon->yeu_cau = $request->request;
+        request()->session()->put("number_product",0);
+        $hoadon->save();
+        return redirect('/');
+    }
     public function getDangXuat()
     {
         session()->put('khachhang');
         return redirect('/');
     }
+
+
+    public function getAdminLogin()
+    {
+        return view('adminLogin');
+    }
 }
+

@@ -1,15 +1,20 @@
 html, body {
     font-family: 'Numans', sans-serif;
 }
-.backgound_header{
-    background:url(./images/21.jpg);
+
+.backgound_header {
+    background: url(./images/21.jpg);
 }
+
 .input_header {
     width: 70%;
 }
 
-.btn_giohang {
-    width: 20%;
+.gioHang {
+    padding-left:7px; padding-right:7px
+}
+.gioHangDiv{
+    display: flex; align-items: center;
 }
 
 .card {
@@ -27,8 +32,6 @@ html, body {
     border-bottom: solid 1px #fbca00;
     font-size: 12px
 }
-
-
 
 .a_header {
     color: rgb(3, 3, 3)
@@ -56,4 +59,75 @@ html, body {
     margin-left: 1px;
     margin-right: 1px;
     height: 30px;
+}
+
+.btn_witdth{
+    width: 100%;
+}
+.li_width{
+    width: 230px;
+}
+.dropdownn {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdownn-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.dropdownn-content a {
+    color: black;
+    padding: 2px 6px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdownn-content a:hover {
+    color: #189eff;
+}
+
+.dropdownn:hover .dropdownn-content {
+    display: block
+}
+
+.dropdownn:hover .dropbtnn {
+    background-color: #3e8e41;
+}
+
+.mega-menu {
+    width: 94vw;
+    padding: 10px;
+    margin-top: 9px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 75vh;
+    border-radius: 2px;
+}
+
+/* @media (max-width:960px) {
+    .mega-menu {
+        width: 560px;
+    }
+}
+
+@media (max-width:560px) {
+    .mega-menu {
+        width: 300px;
+    }
+} */
+
+.mega-menu .row ul {
+    list-style: none;
+    text-align: left;
+}
+
+hr{
+    margin:2px;
+
 }
