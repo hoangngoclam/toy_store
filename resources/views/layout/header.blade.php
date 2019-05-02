@@ -51,7 +51,7 @@
             <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 col-xm-2 justify-content-end "
                 style="display: flex; align-items: center; magin-bottom:4px">
                 @if (Session::has('khachhang'))
-                    <a type="button" class="btn btn-warning" href="./gio_hang/{{ Session::get('khachhang')->id }}">
+                    <a type="button" class="btn btn-warning" href="./gio_hang/chi_tiec/{{ Session::get('khachhang')->id }}">
                         <i class="fas fa-cart-plus mr-1" ></i>
                             Giỏ hàng
                         <span id="number_product" class="badge badge-dark ml-1" >{{ Session::get('number_product') }}</span>

@@ -15,13 +15,14 @@ Route::get('/', 'TrangChuController@getTrangChu');
 Route::get('database', 'DatabaseController@getCreateTables');
 Route::group(['prefix' => '/', 'middleware' => 'loginKH'], function () {
     Route::group(['prefix' => 'gio_hang'], function () {
-        Route::get('/{id}', 'TrangChuController@getGioHang');
+        Route::get('/chi_tiec/{id}', 'TrangChuController@getGioHang');
         Route::get('/bo_sp/{id}', 'TrangChuController@getBoSanPham');
         Route::get('/them_sp/{id}', 'TrangChuController@getThemSanPham');
         Route::get('/giam_sp/{id}', 'TrangChuController@getDecreaseProduct');
         Route::get('/mua_hang/{id}','TrangChuController@getMuaHang');
         Route::get('/thong_tin/{id}','TrangChuController@getThongTinGiaoHang');
         Route::post('/thong_tin/{id}','TrangChuController@postThongTinGiaoHang');
+        Route::get('/ds_hoa_don','TrangChuController@getDSHoaDon');
     });
     Route::get('dang_xuat', 'TrangChuController@getDangXuat');
 });
