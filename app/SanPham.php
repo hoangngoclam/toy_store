@@ -15,7 +15,7 @@ class SanPham extends Model
     
     public function kieusp()
     {
-        return $this->hasOne('App\KieuSP', 'id_kieu_sp');
+        return $this->belongsTo('App\KieuSP', 'id_kieu_sp');
     }
     public function dssp()
     {
