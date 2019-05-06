@@ -63,6 +63,11 @@ class AdminController extends Controller
         $sanPham->save();
         return Redirect("admin/sanpham");
     }
+    public function postXoaSanPham(Request $request){
+        $sanPham = SanPham::find($request->id);
+        $sanPham->delete();
+        return $sanPham->id;
+    }
     public function postEditHoaDon(Request $request){
         $hoadon = HoaDon::find($request->id);
         $hoadon->trang_thai = "Da_mua";

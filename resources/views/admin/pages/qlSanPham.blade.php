@@ -32,7 +32,7 @@
                                     data-toggle="modal" data-target="#xem-sp">Xem</button>
                                 <button class="btn btn-warning btn-sua-sp" data-id="{{ $item->id  }}"
                                     data-toggle="modal" data-target="#sua-sp">Sửa</button>
-                                <button class="btn btn-danger">Xóa</button>
+                                <button class="btn btn-danger btn-xoa-sp" data-id="{{ $item->id  }}">Xóa</button>
                             </div>
                         </td>
                     </tr>
@@ -53,6 +53,7 @@
 function themSanPham() {
     document.getElementById("them-san-pham").submit();
 }
+
 
 function suaSanPham() {
     document.getElementById("sua-san-pham").submit();
@@ -100,6 +101,28 @@ $(document).ready(function() {
                 $('#id-edit-sp').val(result.id);
             }
         });
+    });
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+        });
+    $('.btn-xoa-sp').click(function(e) {
+        var idSP = e.currentTarget.dataset.id;
+        var x = window.confirm("Bạn có muốn xóa sản phẩm này không ?");
+        if(x){
+            jQuery.ajax({
+                url: `{{ url('/admin/xoa_san_pham') }}`,
+                method: 'post',
+                data : {id : idSP},
+                success: function(id) {  
+                    $('#' + id).remove();
+                },error: function(error) {
+                    alert("error");
+                }
+            });
+        }
+        
     });
 });
 </script>
