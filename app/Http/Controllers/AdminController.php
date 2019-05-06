@@ -41,6 +41,14 @@ class AdminController extends Controller
         $sanPham->save();
         return Redirect("admin/sanpham");
     }
+    public function getSuaSanPham($id){
+        $sanPham = SanPham::find($id);
+        return view('admin/pages/suaSanPham')->with('sanpham',$sanPham);
+    }
+    public function getSuaHoaDon($id){
+        $hoadon = HoaDon::find($id);
+        return view('admin/pages/suaHoaDon')->with('hoadon',$hoadon);
+    }
     public function postEditSanPham(Request $request){
         $sanPham = SanPham::find($request->id);
         $sanPham->ten = "erer";
@@ -73,5 +81,9 @@ class AdminController extends Controller
     public function getAdminLogin()
     {
         return view('adminLogin');
+    }
+    public function getXemSanPham($id){
+        $sanpham = SanPham::find($id);
+        return $sanPham;
     }
 }
