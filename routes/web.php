@@ -37,6 +37,7 @@ Route::group(['prefix' => '/admin','middleware' => 'LoginAdmin'], function () {
     Route::get('sanpham','AdminController@getDSSanPham');
     Route::get('hoadon','AdminController@getDSHoaDon');
     Route::get('them_san_pham','AdminController@getThemSanPham');
+    Route::get('xem_san_pham/{id}','AdminController@getXemSanPham');
     Route::post('them_san_pham','AdminController@postThemSanPham');
     Route::get('sua_san_pham/{id}','AdminController@getSuaSanPham');
     Route::post('sua_san_pham/{id}','AdminController@postSuaSanPham');
