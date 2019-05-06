@@ -49,17 +49,17 @@ class AdminController extends Controller
         $hoadon = HoaDon::find($id);
         return view('admin/pages/suaHoaDon')->with('hoadon',$hoadon);
     }
-    public function postEditSanPham(Request $request){
+    public function postSuaSanPham(Request $request){
         $sanPham = SanPham::find($request->id);
-        $sanPham->ten = "erer";
-        $sanPham->id_kieu_sp = 20;
-        $sanPham->id_nha_cc = 10;
-        $sanPham->chat_lieu_chinh ="113";
-        $sanPham->so_luong = 20;
-        $sanPham->gia_ban = 12000;
-        $sanPham->gia_nhap = 10000;
-        $sanPham->so_lan_xem = 0;
-        $sanPham->hinh_anh = "https://kidsplaza-1.cdn.vccloud.vn/media/catalog/product/d/o/do-choi-xe-bus-thong-minh-7.jpg";
+        $sanPham->ten = $request->ten;
+        $sanPham->id_kieu_sp = 2;//kieeur sp
+        $sanPham->id_nha_cc = 1;//nhaf cung cap 
+        $sanPham->chat_lieu_chinh =$request->chat_lieu_chinh;
+        $sanPham->so_luong = $request->so_luong;
+        $sanPham->gia_ban = $request->gia_ban;
+        $sanPham->gia_nhap = $request->gia_nhap;
+        $sanPham->so_lan_xem =0;
+        $sanPham->hinh_anh = $request->hinh_anh;
         $sanPham->save();
         return Redirect("admin/sanpham");
     }
@@ -84,6 +84,6 @@ class AdminController extends Controller
     }
     public function getXemSanPham($id){
         $sanpham = SanPham::find($id);
-        return $sanPham;
+        return $sanpham;
     }
 }

@@ -40,7 +40,7 @@ Route::group(['prefix' => '/admin','middleware' => 'LoginAdmin'], function () {
     Route::get('xem_san_pham/{id}','AdminController@getXemSanPham');
     Route::post('them_san_pham','AdminController@postThemSanPham');
     Route::get('sua_san_pham/{id}','AdminController@getSuaSanPham');
-    Route::post('sua_san_pham/{id}','AdminController@postSuaSanPham');
+    Route::post('sua_san_pham','AdminController@postSuaSanPham');
     Route::get('xoa_san_pham/{id}','AdminController@postThemSanPham');
     
 });
