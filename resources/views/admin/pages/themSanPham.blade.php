@@ -28,34 +28,34 @@
             </select>
         </div>
         <div class="form-group col-md-6">
-            <label for="name-sp">Text</label>
-            <input id="name-sp" class="form-control" type="text">
+            <label for="name-sp">Chất liệu chính</label>
+            <input id="name-sp"name="chat_lieu_chinh" class="form-control" type="text">
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label for="name-sp">Text</label>
-            <input id="name-sp" class="form-control" type="text">
+            <label for="name-sp">Số lượng</label>
+            <input id="name-sp"name="so_luong" class="form-control" type="text">
         </div>
         <div class="form-group col-md-6">
-            <label for="name-sp">Text</label>
-            <input id="name-sp" class="form-control" type="text">
+            <label for="name-sp">Giá bán</label>
+            <input id="name-sp"name="gia_ban" class="form-control" type="text">
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label for="name-sp">Text</label>
-            <input id="name-sp" class="form-control" type="text">
+            <label for="name-sp">Giá nhập</label>
+            <input id="name-sp"name="gia_nhap" class="form-control" type="text">
         </div>
         <div class="form-group col-md-6">
-            <label for="name-sp">Text</label>
-            <input id="name-sp" class="form-control" type="text">
+            <label for="name-sp">Số lần xem</label>
+            <input id="name-sp"name="so_lan_xem" class="form-control" type="text">
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-12">
-            <label for="name-sp">Text</label>
-            <input id="name-sp" class="form-control" type="text">
+            <label for="name-sp">Hình ảnh</label>
+            <input id="name-sp"name="hinh_anh" class="form-control" type="text">
         </div>
     </div>
 </form>
