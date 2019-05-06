@@ -16,7 +16,11 @@
                     <tr>
                         <th scope="col">id</th>
                         <th scope="col">Ten</th>
+                        <th scope="col">Kiểu sản phẩm</th>
                         <th scope="col">Số lượng</th>
+                        <th scope="col">Giá bán</th>
+                        <th scope="col">Giá nhập </th>
+                        <th scope="col">Số Lần xem</th>
                         <th scope="col">#</th>
                     </tr>
                 </thead>
@@ -25,7 +29,11 @@
                     <tr id={{ $item->id }}>
                         <th scope="row">{{$item->id}}</th>
                         <td>{{ $item->ten}}</td>
+                        <td>{{ $item->kieusp->ten}}</td>
                         <td>{{ $item->so_luong}}</td>
+                        <td>{{ $item->gia_ban}}</td>
+                        <td>{{ $item->gia_nhap}}</td>
+                        <td>{{ $item->so_lan_xem}}</td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Button group">
                                 <button class="btn btn-primary btn-xem-sp" data-id="{{ $item->id  }}"
