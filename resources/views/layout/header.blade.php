@@ -47,7 +47,7 @@
                 style="display: flex; align-items: center;">
                 @if (Session::has('khachhang'))
                 <a class="btn btn-warning btn-lg" style="padding-left:7px; padding-right:7px"
-                    href="./gio_hang/{{ Session::get('khachhang')->id }}">
+                    href="./gio_hang/chi_tiet/{{ Session::get('khachhang')->id }}">
                     <i class="fas fa-cart-plus mr-1"></i>
                     Giỏ hàng
                     <span id="number_product" class="badge badge-dark ml-1">{{ Session::get('number_product') }}</span>
@@ -87,7 +87,7 @@
                                                 <a href="#"><li><strong>{{ $loaisp->ten }}</strong></li></a>
                                                 <hr>
                                                 @foreach ($loaisp->kieusp as $item)
-                                                <a href="https://www.youtube.com/watch?v=932hSm1yNII"><li>{{ $item->ten }}</li></a>
+                                                <a href="./kieu_sp/{{ $item->id }}"><li>{{ $item->ten }}</li></a>
                                                 @endforeach
 
                                             </ul>

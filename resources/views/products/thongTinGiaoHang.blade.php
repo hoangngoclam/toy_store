@@ -1,11 +1,10 @@
 @extends('layout.index')
 @section('css')
 <link rel="stylesheet" href="./css/login.css">
-
-
+@section('content')
     <div class="container">
-        <div class="d-flex justify-content-center thongTin" >
-            <div class="card">
+        <div class="row  justify-content-center thongTin" >
+            <div class="card col-md-5 my-md-3">
                 <div class="card-header text-center ">
                     <h3>Thông tin giao hàng</h3>
                 </div>

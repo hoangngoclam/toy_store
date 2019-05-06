@@ -2,6 +2,9 @@ html, body {
     font-family: 'Numans', sans-serif;
 }
 
+.pointer{
+    cursor: pointer;
+}
 .backgound_header {
     background: url(./images/21.jpg);
 }
@@ -130,4 +133,12 @@ html, body {
 hr{
     margin:2px;
 
+}
+.item-general{
+    color:#333;
+    
+}
+.item-general:hover{
+    color:#333;
+    text-decoration: none;
 }

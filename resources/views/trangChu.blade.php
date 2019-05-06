@@ -38,11 +38,11 @@
             </div>
         </div>
         @endforeach
+        <div class="col-md-12">
+            <div class="float-right">
+                {{ $sanpham->links() }}
+            </div>
+        </div>
     </div>
 </div>
-@endsection
-@section('js')
-    <script>
-
-    </script>
 @endsection
