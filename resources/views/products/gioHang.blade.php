@@ -80,7 +80,7 @@
                         <span class="gia">{{ $tongTien }} ₫</span>
                     </div>
                     <hr>
-                    <a href="./gio_hang/thong_tin/{{$dssp[0]->id_hd}}" class="btn btn-danger btn_tinhTien" type="button">Tiến hành đặt hàng</a>
+                    <a href="./gio_hang/thong_tin/{{ $dssp[0]->id_hd }}" class="btn btn-danger btn_tinhTien" type="button">Tiến hành đặt hàng</a>
                 </div>
             @endif
         </div>

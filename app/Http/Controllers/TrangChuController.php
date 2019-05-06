@@ -26,9 +26,15 @@ class TrangChuController extends Controller
     }
     public function getTrangChu()
     {
-
         $sanphams = DB::table('san_pham')->paginate(15);
-        return view('trangChu')->with("sanpham", $sanphams);
+        $data=["sanpham"=>$sanphams,"key"=>""];
+        return view('trangChu')->with($data);
+    }
+
+    public function getTimKiemSP(Request $request){
+        $sanpham = SanPham::where("ten","LIKE","%".$request->key."%")->paginate(10);
+        $data=["sanpham"=>$sanpham,"key"=>$request->key];
+        return view('trangChu')->with($data);
     }
 
     public function getRegisterAndLogin()
@@ -63,7 +69,17 @@ class TrangChuController extends Controller
         $user->email = $request->email;
         $user->mat_khau = $request->password;
         $user->save();
+        $request->session()->put('khachhang', $user);
         return Redirect("/")->with("user", $user);
+    }
+
+    public function getDSHoaDon(){
+        return view('products/danhSachHoaDon')->with('hoadon',[1,2]);
+    }
+
+    public function getTimSPTheoKieuSP($id){
+        $sanpham = SanPham::where("id_kieu_sp","=",$id)->paginate(15);
+        return view('trangChu')->with("sanpham",$sanpham);
     }
 
     public function getChiTiecSanPham($id)
@@ -75,7 +91,7 @@ class TrangChuController extends Controller
     }
     public function getGioHang($id)
     {
-        $donhang = HoaDon::where("id_kh", "=", $id)->where("trang_thai", "=", self::TrangThaiDangChon)->first();
+        $donhang = HoaDon::where("trang_thai", "=", self::TrangThaiDangChon)->where("id_kh", "=", $id)->first();
         if ($donhang) {
             $idHoaDon = $donhang->id;
             $dssp = DanhSachSP::where("id_hd", "=", $idHoaDon)->get();
@@ -137,8 +153,17 @@ class TrangChuController extends Controller
         } 
         return Redirect('gio_hang/' . session()->get('khachhang')->id);
     }
-    public function getThongTinGiaoHang(){
-        return view('products/thongTinGiaoHang');
+    public function getThongTinGiaoHang($id){
+        $hoadon = HoaDon::find($id);
+        $dsspChon = DanhSachSP::where("id_hd", "=", $hoadon->id)->get();
+        $tongTien = 0;
+        foreach ($dsspChon as $key => $item) {
+            $tongTien += $item->sanpham->gia_ban;
+        }
+        $hoadon->tong_tien = $tongTien;
+        $hoadon->save();
+        $data = ["hoa_don" => $hoadon,"tong_tien"=>$tongTien];
+        return view('products/thongTinGiaoHang')->with($data);
     }
     public function getMuaHang($id){
         $hoadon = HoaDon::find($id);
@@ -156,12 +181,12 @@ class TrangChuController extends Controller
     public function postThongTinGiaoHang($id,Request $request){
         $hoadon = HoaDon::find($id);
         $hoadon->trang_thai = "DA_MUA";
-        // $hoadon->ten_nguoi_nhan = $request->name;
-        // $hoadon->so_dien_thoai_nhan = $request->phone_number;
-        // $hoadon->noi_nhan = $request->address;
-        // $hoadon->yeu_cau = $request->request;
-        request()->session()->put("number_product",0);
+        $hoadon->ten_nguoi_nhan = $request->name;
+        $hoadon->so_dien_thoai_nhan = $request->phone_number;
+        $hoadon->noi_nhan = $request->address;
+        $hoadon->yeu_cau = $request->request_hd;
         $hoadon->save();
+        $request->session()->put("number_product", 0);
         return redirect('/');
     }
     public function getDangXuat()

@@ -73,7 +73,7 @@
             <div class="card col-xs-7 col-sm-6 col-md-7 col-lg-7 col-xm-2 p-0">
                 <div class="card-body">
                     <div style="height: 60px;">
-                            <h4 class="mb-0"">{{$sanpham->ten}}</h4>
+                            <h4 class="mb-0">{{$sanpham->ten}}</h4>
                     </div>
                     <div>
                         <span class="star">
@@ -111,6 +111,34 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-12">
+                <div class="fb-comments w-100" data-href="{{ url()->current() }}" data-width="100%" data-numposts="5"></div>
+            </div>
         </div>
     </div>
+@endsection
+
+@section('js')
+    
+<script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '2694935313911864',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v3.2'
+      });
+        
+      FB.AppEvents.logPageView();   
+        
+    };
+  
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
 @endsection

@@ -47,7 +47,7 @@
                      
                     </div>
                     <div class="card-body">
-                        <form action="./dang_nhap" method="POST">
+                        <form action="./admin" method="POST">
                             {{ csrf_field() }}
                             <div class="input-group form-group" >
                                 <div class="input-group-prepend">
