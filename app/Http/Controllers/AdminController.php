@@ -8,6 +8,9 @@ use App\SanPham;
 use Illuminate\Support\Facades\DB;
 use App\HoaDon;
 use Illuminate\Support\Facades\Redirect;
+use App\KieuSP;
+use App\NhaCungCap;
+use App\DanhMuc;
 
 class AdminController extends Controller
 {
@@ -25,7 +28,10 @@ class AdminController extends Controller
     }
     public function getDSSanPham(){
         $sanpham = SanPham::all();
-        return view('admin/pages/qlSanPham')->with('sanpham',$sanpham);
+        $kieuSP = KieuSP::all();
+        $nhacc = NhaCungCap::all();
+        $data = ['sanpham'=>$sanpham, 'kieusp'=>$kieuSP,'nhacc'=>$nhacc];
+        return view('admin/pages/qlSanPham')->with($data);
     }
     public function postThemSanPham(Request $request){
         $sanPham = new SanPham();
@@ -83,6 +89,12 @@ class AdminController extends Controller
         $hoadon = HoaDon::all();
         return view('admin/pages/qlHoaDon')->with('hoadon',$hoadon);
     }
+    public function getDSKieuSP(){
+        $kieuSp = KieuSP::all();
+        $danhmucSP = DanhMuc::all();
+        $data = ['kieuSP'=>$kieuSp,'danhmuc'=>$danhmucSP[0]];
+        return view('admin/pages/qlKieuSanPham')->with($data);
+    }
     public function getAdminLogin()
     {
         return view('adminLogin');
@@ -90,5 +102,34 @@ class AdminController extends Controller
     public function getXemSanPham($id){
         $sanpham = SanPham::find($id);
         return $sanpham;
+    }
+    public function postThemKieuSanPham(Request $request){
+        $kieuSP = new KieuSP();;
+        $kieuSP->id_loai_sp = $request->id_loai_sp;
+        $kieuSP->ten = $request->kieu_sp;
+        $kieuSP->save();
+        return redirect('admin/ds_kieu_sp');
+    }
+    public function postSuaKieuSanPham(Request $request){
+        $kieuSP = KieuSP::find($request->id);
+        $kieuSP->id_loai_sp = $request->id_loai_sp;
+        $kieuSP->ten = $request->kieu_sp;
+        $kieuSP->save();
+        return redirect('admin/ds_kieu_sp');
+    }
+    public function postXoaKieuSanPham(Request $request){
+        $kieuSP = KieuSP::find($request->id);
+        $sanpham = SanPham::where("id_kieu_sp","=",$request->id)->get();
+        if(count($sanpham)){
+            return "error";
+        }
+        $kieuSP->delete();
+        return $request->id;
+    }
+    public function getKieuSP($id){
+        $kieuSP = KieuSP::find($id);
+        // $loaiSP = $kieuSP->loaiSP;
+        // $data=["kieuSP"=>$kieuSP,"loaiSP"=>$loaiSP];
+        return $kieuSP;
     }
 }

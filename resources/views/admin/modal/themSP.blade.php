@@ -20,10 +20,9 @@
                         <div class="form-group col-md-6">
                             <label for="name-sp">Kiểu sản phẩm</label>
                             <select id="inputState" name="kieu_sp" class="form-control">
-                                <option selected value="1">Kieu 1</option>
-                                <option value="2">Kieu 2</option>
-                                <option value="3">Kieu 3</option>
-                                <option value="4">Kieu 4</option>
+                                @foreach ($kieusp as $itemKieuSP)
+                                <option value="{{ $itemKieuSP->id }}">{{ $itemKieuSP->ten }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -31,10 +30,9 @@
                         <div class="form-group col-md-6">
                             <label for="name-sp">Nhà sản xuất</label>
                             <select id="id_nha_cc" name="nha_cc" class="form-control">
-                                <option selected value="1">Kieu 1</option>
-                                <option value="2">Kieu 2</option>
-                                <option value="3">Kieu 3</option>
-                                <option value="4">Kieu 4</option>
+                                @foreach ($nhacc as $itemNhacc)
+                                <option value="{{ $itemNhacc->id }}">{{ $itemNhacc->ten }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group col-md-6">

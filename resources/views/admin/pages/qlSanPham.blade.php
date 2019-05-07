@@ -8,7 +8,6 @@
         <div class="col-md-12 mb-2">
             <button class="btn btn-primary float-right" type="button" data-toggle="modal" 
                 data-target="#them-sp" >Them +</button>
-
         </div>
         <div class="col-md-12">
             <table id="dataTable" class="table table-striped" style="width:100%">

@@ -41,8 +41,12 @@ Route::group(['prefix' => '/admin','middleware' => 'LoginAdmin'], function () {
     Route::post('them_san_pham','AdminController@postThemSanPham');
     Route::get('sua_san_pham/{id}','AdminController@getSuaSanPham');
     Route::post('sua_san_pham','AdminController@postSuaSanPham');
-    
+    Route::get('ds_kieu_sp','AdminController@getDSKieuSP');
     Route::post('xoa_san_pham','AdminController@postXoaSanPham');
+    Route::post('them_kieu_san_pham','AdminController@postThemKieuSanPham');
+    Route::post('sua_kieu_san_pham','AdminController@postSuaKieuSanPham');
+    Route::post('xoa_kieu_san_pham','AdminController@postXoaKieuSanPham');
+    Route::get('xem_kieu_san_pham/{id}','AdminController@getKieuSP');
     
 });
 Route::post('admin','AdminController@postAdminLogin');
