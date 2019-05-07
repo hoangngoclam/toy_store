@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form method="POST" id="sua-san-pham" action="./admin/sua_san_pham">
+                <form method="POST" id="sua-san-pham" action="./admin/sua_san_pham" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-row">
                         <input type="hidden" id="id-edit-sp" name="id" >

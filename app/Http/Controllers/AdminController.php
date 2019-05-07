@@ -43,8 +43,6 @@ class AdminController extends Controller
         $sanPham->gia_ban = $request->gia_ban;
         $sanPham->gia_nhap = $request->gia_nhap;
         $sanPham->so_lan_xem =0;
-        
-
         if($request->hasFile('myFile')){
             $file = $request->file('myFile');
             $fileName = $file->getClientOriginalName('myFile');
@@ -69,14 +67,19 @@ class AdminController extends Controller
         $sanPham->gia_ban = $request->gia_ban;
         $sanPham->gia_nhap = $request->gia_nhap;
         $sanPham->so_lan_xem =0;
-        $sanPham->hinh_anh ='img/'.$request->myFile2;
+        if($request->hasFile('myFile2')){
+            $file = $request->file('myFile2');
+            $fileName = $file->getClientOriginalName('myFile2');
+            $file->move('img',$fileName);
+            $sanPham->hinh_anh ='img/'.$fileName;
+        }
         $sanPham->save();
         return Redirect("admin/sanpham");
     }
     public function postXoaSanPham(Request $request){
         $sanPham = SanPham::find($request->id);
         $sanPham->delete();
-        return $sanPham->id;
+        return $request->id;
     }
     
     public function getXemSanPham($id){
