@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form method="POST" id="sua-san-pham" action="./admin/sua_san_pham">
+                <form method="POST" id="sua-san-pham" action="./admin/sua_san_pham" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-row">
                         <input type="hidden" id="id-edit-sp" name="id" >
@@ -58,7 +58,16 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="name-sp">Hình ảnh</label>
-                            <input id="id-hinh-anh" name="hinh_anh" class="form-control" type="text">
+                            <input id="id-hinh-anh" name="hinh_anh" class="form-control" type="text" disabled>
+
+                            {{-- <img class="w-100" id="hinh-anh-edit" src="" alt=""> --}}
+
+                            <input type="file" name="myFile2" id="input-image-edit" class="form-control">
+                            
+                            <div class="w-100" id="image-edit">
+                                {{-- //hinh anh duoc chen tu js  --}}
+                            </div>
+                     
                         </div>
                     </div>
                 </form>

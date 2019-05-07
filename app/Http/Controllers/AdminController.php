@@ -43,17 +43,19 @@ class AdminController extends Controller
         $sanPham->gia_ban = $request->gia_ban;
         $sanPham->gia_nhap = $request->gia_nhap;
         $sanPham->so_lan_xem =0;
-        $sanPham->hinh_anh = $request->hinh_anh;
+        if($request->hasFile('myFile')){
+            $file = $request->file('myFile');
+            $fileName = $file->getClientOriginalName('myFile');
+
+            $file->move('img',$fileName);
+        }
+        $sanPham->hinh_anh = 'img/'.$fileName;
         $sanPham->save();
         return Redirect("admin/sanpham");
     }
     public function getSuaSanPham($id){
         $sanPham = SanPham::find($id);
         return view('admin/pages/suaSanPham')->with('sanpham',$sanPham);
-    }
-    public function getSuaHoaDon($id){
-        $hoadon = HoaDon::find($id);
-        return view('admin/pages/suaHoaDon')->with('hoadon',$hoadon);
     }
     public function postSuaSanPham(Request $request){
         $sanPham = SanPham::find($request->id);
@@ -65,14 +67,44 @@ class AdminController extends Controller
         $sanPham->gia_ban = $request->gia_ban;
         $sanPham->gia_nhap = $request->gia_nhap;
         $sanPham->so_lan_xem =0;
-        $sanPham->hinh_anh = $request->hinh_anh;
+        if($request->hasFile('myFile2')){
+            $file = $request->file('myFile2');
+            $fileName = $file->getClientOriginalName('myFile2');
+            $file->move('img',$fileName);
+            $sanPham->hinh_anh ='img/'.$fileName;
+        }
         $sanPham->save();
         return Redirect("admin/sanpham");
     }
     public function postXoaSanPham(Request $request){
         $sanPham = SanPham::find($request->id);
         $sanPham->delete();
-        return $sanPham->id;
+        return $request->id;
+    }
+    
+    public function getXemSanPham($id){
+        $sanpham = SanPham::find($id);
+        return $sanpham;
+    }
+
+    public function postFile(Request $request){
+        if($request->hasFile('myFile')){
+            $file = $request->file('myFile');
+            $fileName = $file->getClientOriginalName('myFile');
+            echo $fileName;
+
+            $file->move('img',$fileName);
+
+            echo "Upload ảnh thành công!";
+        }else{
+            echo "Chưa co file!";
+        }
+    }
+
+
+    public function getSuaHoaDon($id){
+        $hoadon = HoaDon::find($id);
+        return view('admin/pages/suaHoaDon')->with('hoadon',$hoadon);
     }
     public function postEditHoaDon(Request $request){
         $hoadon = HoaDon::find($request->id);
@@ -89,19 +121,16 @@ class AdminController extends Controller
         $hoadon = HoaDon::all();
         return view('admin/pages/qlHoaDon')->with('hoadon',$hoadon);
     }
+
+    public function getAdminLogin()
+    {
+        return view('adminLogin');
+    }
     public function getDSKieuSP(){
         $kieuSp = KieuSP::all();
         $danhmucSP = DanhMuc::all();
         $data = ['kieuSP'=>$kieuSp,'danhmuc'=>$danhmucSP[0]];
         return view('admin/pages/qlKieuSanPham')->with($data);
-    }
-    public function getAdminLogin()
-    {
-        return view('adminLogin');
-    }
-    public function getXemSanPham($id){
-        $sanpham = SanPham::find($id);
-        return $sanpham;
     }
     public function postThemKieuSanPham(Request $request){
         $kieuSP = new KieuSP();;

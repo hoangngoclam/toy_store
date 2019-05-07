@@ -69,6 +69,7 @@
     });
         $('.btn-xoa-kieu-sp').click(function(e) {
         var idKieuSP = e.currentTarget.dataset.id;
+        if(confirm("Bạn có muốn xóa không ?"))
         jQuery.ajax({
             url: `{{ url('/admin/xoa_kieu_san_pham') }}`,
             method: 'post',
@@ -77,7 +78,10 @@
                 if(result == "error"){
                     alert("Đã có sản phẩm thuộc kiểu sản phẩm này");
                 }
-                $('#'+result).remove();
+                else{
+                    $('#'+result).remove();
+                }
+                
             }
         });
     });

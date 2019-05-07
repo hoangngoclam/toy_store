@@ -37,10 +37,10 @@
                                         <h5>Giá nhập</h5>                           
                                         <p  id="gia-nhap"></p>
                                     </div>
-                                <div class="col-md-6">
+                                <div  class="col-md-6">
                                         <h5>Hình ảnh</h5>
-                                        <p  id="hinh-anh"></p>
-                                        <img id="hinh-anh" src="" alt="">
+
+                                        <img class="w-100" id="hinh-anh" src="" alt="">
                                         
                                 </div>
                     

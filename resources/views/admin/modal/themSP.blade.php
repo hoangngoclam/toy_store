@@ -10,7 +10,9 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form method="post" id="them-san-pham" action="./admin/them_san_pham">
+                
+            
+                <form method="post" id="them-san-pham" action="./admin/them_san_pham"  enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-row">
                         <div class="form-group col-md-6">
@@ -55,9 +57,15 @@
                             <label for="name-sp">Giá nhập</label>
                             <input id="id_gia_nhap" name="gia_nhap" class="form-control" type="text">
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-6 " >
                             <label for="name-sp">Hình ảnh</label>
-                            <input id="id_hinh_anh" name="hinh_anh" class="form-control" type="text">
+        
+                            <input type="file" name="myFile" id="input-image-add" class="form-control" >
+ 
+                            <div class="w-100" id="image-add">
+                                {{-- //hinh anh duoc chen tu js  --}}
+                            </div>
+                     
                         </div>
                     </div>
                 </form>
