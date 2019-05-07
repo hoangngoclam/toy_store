@@ -74,8 +74,6 @@ $(document).ready(function() {
             method: 'get',
             success: function(result) {
                 console.log(result);
-                // var customer = result[0];
-                // console.log(customer);
                 $('#ten-sp').text(result.ten);
                 $('#kieu-sp').text(result.id_kieu_sp);
                 $('#nha-cc').text(result.id_nha_cc);
@@ -83,6 +81,7 @@ $(document).ready(function() {
                 $('#so-luong').text(result.so_luong);
                 $('#gia-ban').text(result.gia_ban);
                 $('#gia-nhap').text(result.gia_nhap);
+                $('#hinh-anh').attr('src', result.hinh_anh);
             }
         });
     });
@@ -95,8 +94,6 @@ $(document).ready(function() {
             method: 'get',
             success: function(result) {
                 console.log(result);
-                // var customer = result[0];
-                // console.log(customer);
                 $('#id-ten').val(result.ten);
                 $('#id-kieu-sp').val(result.id_kieu_sp);
                 $('#id-nha-cc').val(result.id_nha_cc);
@@ -106,6 +103,8 @@ $(document).ready(function() {
                 $('#id-gia-nhap').val(result.gia_nhap);
                 $('#id-hinh-anh').val(result.hinh_anh);
                 $('#id-edit-sp').val(result.id);
+
+                // $('#hinh-anh-edit').attr('src', result.hinh_anh);
             }
         });
     });
@@ -132,5 +131,32 @@ $(document).ready(function() {
         
     });
 });
+
+
+const input = document.querySelector('input[type="file"]')
+function handleFiles (files) {
+  console.log(files)
+  const reader = new FileReader()
+  reader.onload = function () {
+    const img = new Image()
+
+    
+    img.src = reader.result
+    
+    $("#imageForm").children().remove();
+    document.getElementById('imageForm').appendChild(img).style.width ='100%'
+
+    $("#imageFormm").children().remove();
+    document.getElementById('imageFormm').appendChild(img).style.width ='100%'
+
+  }
+  reader.readAsDataURL(files[0])
+}
+
+input.addEventListener('change', function (e) {
+  handleFiles(input.files)
+}, false)
+
+
 </script>
 @endsection

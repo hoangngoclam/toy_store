@@ -39,6 +39,7 @@ Route::group(['prefix' => '/admin','middleware' => 'LoginAdmin'], function () {
     Route::get('them_san_pham','AdminController@getThemSanPham');
     Route::get('xem_san_pham/{id}','AdminController@getXemSanPham');
     Route::post('them_san_pham','AdminController@postThemSanPham');
+    
     Route::get('sua_san_pham/{id}','AdminController@getSuaSanPham');
     Route::post('sua_san_pham','AdminController@postSuaSanPham');
     Route::get('ds_kieu_sp','AdminController@getDSKieuSP');
@@ -48,6 +49,13 @@ Route::group(['prefix' => '/admin','middleware' => 'LoginAdmin'], function () {
     Route::post('xoa_kieu_san_pham','AdminController@postXoaKieuSanPham');
     Route::get('xem_kieu_san_pham/{id}','AdminController@getKieuSP');
     
+    Route::get('uploadFile',function(){
+        return view('admin.postFile');
+    });
+    Route::post('postFileX','AdminController@postFile');
+
+
+
 });
 Route::post('admin','AdminController@postAdminLogin');
 Route::get('dang_nhap_admin', 'AdminController@getAdminLogin');
