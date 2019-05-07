@@ -55,7 +55,6 @@ Route::group(['prefix' => '/admin','middleware' => 'LoginAdmin'], function () {
     Route::post('postFileX','AdminController@postFile');
 
 
-
 });
 Route::post('admin','AdminController@postAdminLogin');
 Route::get('dang_nhap_admin', 'AdminController@getAdminLogin');
