@@ -103,7 +103,10 @@ $(document).ready(function() {
                 $('#id-gia-nhap').val(result.gia_nhap);
                 $('#id-hinh-anh').val(result.hinh_anh);
                 $('#id-edit-sp').val(result.id);
-
+                const img = new Image()
+                img.src = result.hinh_anh;
+                $("#image-edit").children().remove();
+                document.getElementById("image-edit").appendChild(img).style.width ='100%'
                 // $('#hinh-anh-edit').attr('src', result.hinh_anh);
             }
         });
@@ -133,28 +136,24 @@ $(document).ready(function() {
 });
 
 
-const input = document.querySelector('input[type="file"]')
-function handleFiles (files) {
-  console.log(files)
+const inputEdit = document.getElementById("input-image-edit");
+const inputAdd = document.getElementById("input-image-add");
+function handleFiles (files,idImage) {
   const reader = new FileReader()
   reader.onload = function () {
     const img = new Image()
-
-    
     img.src = reader.result
-    
-    $("#imageForm").children().remove();
-    document.getElementById('imageForm').appendChild(img).style.width ='100%'
-
-    $("#imageFormm").children().remove();
-    document.getElementById('imageFormm').appendChild(img).style.width ='100%'
-
+    $("#"+idImage).children().remove();
+    document.getElementById(idImage).appendChild(img).style.width ='100%'
   }
   reader.readAsDataURL(files[0])
 }
 
-input.addEventListener('change', function (e) {
-  handleFiles(input.files)
+inputEdit.addEventListener('change', function (e) {
+  handleFiles(inputEdit.files,"image-edit");
+}, false)
+inputAdd.addEventListener('change', function (e) {
+  handleFiles(inputAdd.files,"image-add");
 }, false)
 
 

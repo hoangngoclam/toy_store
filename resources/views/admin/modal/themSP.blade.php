@@ -60,9 +60,9 @@
                         <div class="form-group col-md-6 " >
                             <label for="name-sp">Hình ảnh</label>
         
-                            <input type="file" name="myFile"  class="form-control">
+                            <input type="file" name="myFile" id="input-image-add" class="form-control" >
  
-                            <div class="w-100" id="imageForm">
+                            <div class="w-100" id="image-add">
                                 {{-- //hinh anh duoc chen tu js  --}}
                             </div>
                      
