@@ -6,8 +6,25 @@
     <div class="container-fluid container_fluid" id="watch">
         <div class="row">
             <div class="card col-xs-5 col-sm-6 col-md-5 col-lg-5 col-xm-2" >
-                <div class=" w-100 card-img-top" style="background-image: url('{{$sanpham->hinh_anh}}');">
+                    <div class="product_gallery">
+                        <div class="product_gallery_featured">
+                            <div class="big_image">
+                                <img src="{{$sanpham->hinh_anh}}" alt="">
+                            </div>
+                        </div>
+                        <div class="product_gallery_thumbnails">
+                            <ol class="thumbnails_image_list list-unstyled">
+                                <li><div class="small_image" data-image="https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg" style="background-image:url('https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg"></div></li>
+                                <li><div class="small_image" data-image="{{$sanpham->hinh_anh}}" style="background-image:url('{{$sanpham->hinh_anh}}')"></div></li>
+                                <li><div class="small_image" data-image="{{$sanpham->hinh_anh}}" style="background-image:url('{{$sanpham->hinh_anh}}')"></div></li>
+                                <li><div class="small_image" data-image="{{$sanpham->hinh_anh}}" style="background-image:url('{{$sanpham->hinh_anh}}')"></div></li>
+                            </ol>
+                        </div>
+                    </div>
+                {{-- <div class=" w-100 card-img-top" style="background-image: url('{{$sanpham->hinh_anh}}');">
                 </div>
+
+                
                 <hr>
                 <div class="images">
                     <ul>
@@ -31,7 +48,7 @@
                             style="background-image: url('images/1.jpg');">
                             </div>
                     </ul> 
-                </div>
+                </div> --}}
                 <hr style="margin-bottom: 34px;">         
                 <ul>
                         <li>
@@ -82,8 +99,8 @@
                     </div>
                     <hr>
                     <div class="alert alert-secondary" role="alert">
-                            <span class="gia">{{ $sanpham->gia_nhap }}₫</span>
-                            <span class="giamGia">{{ $sanpham->gia_ban }}₫</span>
+                            <span class="gia">{{ number_format($sanpham->gia_nhap ,0, ',', '.') }}₫</span>
+                            <span class="giamGia">{{ number_format($sanpham->gia_ban ,0, ',', '.') }}₫</span>
                             <span class="badge badge-danger ">GIẢM 44%</span>
                     </div>
 
@@ -140,5 +157,13 @@
        js.src = "https://connect.facebook.net/en_US/sdk.js";
        fjs.parentNode.insertBefore(js, fjs);
      }(document, 'script', 'facebook-jssdk'));
+
+     $(document).ready(function () {
+         $('.small_image').click(function (e) { 
+             var linkSmallImage = $(this).data("image");
+             $('.big_image img').attr('src', linkSmallImage);
+         });
+     });
+
   </script>
 @endsection

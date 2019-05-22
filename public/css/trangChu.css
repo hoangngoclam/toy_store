@@ -17,12 +17,13 @@
 .card_x{
 
     border:none;
-    border-radius: 0%;
-   
+    border-radius: 0%; 
 }
+
 .card{
     border:none;
     border-radius: 0%;
+    transition: 0.5s;
 }
 .card_x:hover{
     box-shadow: 1px 2px 7px 0 rgba(0,0,0,.21);

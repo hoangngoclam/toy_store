@@ -29,24 +29,24 @@
                         </ul>
                         <div class="carousel-inner">
                           <div class="carousel-item active">
-                            <img src="./img/1.PNG" alt="Los Angeles" width="100%">
+                            <img src="./img/5.PNG" alt="" width="100%">
                             <div class="carousel-caption">
-                              <h3>Los Angeles</h3>
-                              <p>We had such a great time in LA!</p>
+                              {{-- <h3>Máy bay trực thăng</h3>
+                              <p>Siêu khuyến mãi, siêu ưu đãi</p> --}}
                             </div>   
                           </div>
                           <div class="carousel-item">
-                            <img src="./img/2.PNG" alt="Chicago" width="100%">
+                            <img src="./img/6.PNG" alt="" width="100%">
                             <div class="carousel-caption">
-                              <h3>Chicago</h3>
-                              <p>Thank you, Chicago!</p>
+                              {{-- <h3>Moto Ducati</h3>
+                              <p>Giảm 30%, giá khuyến mãi chỉ có ở ToyStore</p> --}}
                             </div>   
                           </div>
                           <div class="carousel-item">
-                            <img src="./img/3.PNG" alt="New York" width="100%">
+                            <img src="./img/7.PNG" alt="" width="100%">
                             <div class="carousel-caption">
-                              <h3>New York</h3>
-                              <p>We love the Big Apple!</p>
+                              {{-- <h3>Xe điều khiển</h3>
+                              <p>Mua sản phẩm, quà tặng siêu hấp dẫn</p> --}}
                             </div>   
                           </div>
                         </div>
@@ -64,7 +64,7 @@
         
                       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xm-4 px-1">
                         <div class="image_hot">
-                                <img src="./img/4.PNG" alt="" class="image_img" >
+                                <img src="./img/15.PNG" alt="" class="image_img" >
                         </div>
                         
                     </div>
@@ -80,10 +80,10 @@
                 </a>
                 <div class="card-body">
                     <p class="card-title mb-0">{{$item->ten}}</p>
-                    <h6 class="card_body_h6">{{$item->gia_nhap}}₫</h6>
-                    <span class="card_body_span1">{{$item->gia_ban}}₫</span>
+                    <h6 class="card_body_h6">{{ number_format($item->gia_ban ,0, ',', '.')}}₫</h6>
+                    <span class="card_body_span1">{{number_format($item->gia_nhap ,0, ',', '.')}}₫</span>
                     <span class="card_body_span2">-44%</span>
-                    <a href="./gio_hang/them_sp/{{ $item->id }}" class="btn btn-primary btn-sm card_body_a">Thêm vào <i
+                    <a href="./gio_hang/them_sp/{{ $item->id }}" class="btn btn-outline-primary btn-sm card_body_a">Thêm vào <i
                             class="fas fa-cart-plus mr-2"></i></a>
                 </div>
             </div>
@@ -127,5 +127,6 @@
                     <p><span>Bảo đảm đúng 100% chất liệu đồ chơi</span></p>
                 </div>   
         </div>
+  </div>
 </div>
 @endsection
