@@ -2,6 +2,32 @@
 @section('css')
     <link rel="stylesheet" href="./css/gioHang.css">
 @endsection
+@section('js')
+<script>
+    var key = "tongGia";
+    var dataString = localStorage.getItem(key);
+    var danhSachGia = [];
+    if(dataString===null){
+        danhSachGia = JSON.parse(dataString);
+    }else{
+        danhSachGia=[];
+    }
+
+    var addBtn = document.getElementById('datHang');
+    addBtn.addEventListener('click', addItem);
+    function addItem(){
+        var input = document.getElementById('tongGia');
+        var newItem = input.textContent;
+        // render();
+        
+        localStorage.setItem(key,newItem);
+    }
+
+    // function render(){
+    //     var htmlList = document.getElementById()
+    // }
+</script>
+@endsection
 @section('content')
     <div class="container-fluid" id="pay">
         <div class="row">
@@ -43,10 +69,10 @@
     
                             <div class=" col-xs-6 col-sm-12 col-md-5 col-lg-3 col-xm-3 tinhTien">
                                 <div>
-                                    <span class="gia">{{ $item->sanpham->gia_ban }}₫</span>
+                                    <span class="gia">{{number_format($item->sanpham->gia_ban ,0, ',', '.')  }}₫</span>
                                     <br>
                                     <span
-                                        class="giamGia">{{ $item->sanpham->gia_nhap }}₫</span>
+                                        class="giamGia">{{number_format($item->sanpham->gia_nhap ,0, ',', '.')   }}₫</span>
                                     <span class="badge badge-danger"
                                         class="bangGiamGia">-44%</span>
                                 </div>
@@ -72,15 +98,15 @@
                 <div class="card col-xs-5 col-sm-5 col-md-4 col-lg-3 col-xm-3">
                     <div class="tamTinh">
                         <span class="nhan"><strong>Tạm tính:</strong> </span>
-                        <span class="gia">{{ $tongTien }} ₫</span>
+                        <span class="gia">{{number_format($tongTien ,0, ',', '.')  }} ₫</span>
                     </div>
                     <hr>
                     <div class="thanhTien">
                         <span class="icon"><i class="fas fa-file-invoice-dollar"></i></span>
-                        <span class="gia">{{ $tongTien }} ₫</span>
+                        <span class="gia" id="tongGia">{{number_format($tongTien ,0, ',', '.')}} ₫</span>
                     </div>
                     <hr>
-                    <a href="./gio_hang/thong_tin/{{ $dssp[0]->id_hd }}" class="btn btn-danger btn_tinhTien" type="button">Tiến hành đặt hàng</a>
+                    <a href="./gio_hang/thong_tin/{{ $dssp[0]->id_hd }}" class="btn btn-danger btn_tinhTien" type="button" id="datHang">Tiến hành đặt hàng</a>
                 </div>
             @endif
         </div>

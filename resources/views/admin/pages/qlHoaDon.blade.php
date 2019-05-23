@@ -30,7 +30,7 @@
                                     data-toggle="modal" data-target="#xem-sp">Xem</button>
                                 <button class="btn btn-warning btn-sua-sp" data-id="{{ $item->id  }}"
                                     data-toggle="modal" data-target="#sua-sp">Sửa</button>
-                                <button class="btn btn-danger btn-xoa-sp" data-id="{{ $item->id  }}">Xóa</button>
+                                {{-- <button class="btn btn-danger btn-xoa-sp" data-id="{{ $item->id  }}">Xóa</button> --}}
                             </div>
                         </td>
                     </tr>

@@ -59,7 +59,13 @@ section .section-title {
 #footer ul.quick-links li:hover a i {
     font-weight: 700;
 }
-
+#footer {
+    border-bottom: solid 2px #fbca00;  border-top: solid 2px #fbca00;
+    background:url(../images/21.jpg);
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+}
 @media (max-width:767px){
 	#footer h5 {
     padding-left: 0;

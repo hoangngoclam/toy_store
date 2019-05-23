@@ -145,3 +145,31 @@
     height: 42px;
     width: 180px;
 }
+.thumbnails_image_list{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 100px ;
+    grid-column-gap: 10px;
+    
+}
+.thumbnails_image_list li{
+    border: 1px solid #f1f1f1f1;
+    cursor: pointer;
+}
+.thumbnails_image_list li div.small_image{
+    width: 100%;
+    height: 98px;
+    background-size: cover;
+    background-position: center;
+}
+.big_image{
+    width: 100%;
+    height: 420px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.big_image img{
+    width: 100%;
+}

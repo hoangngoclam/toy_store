@@ -1,4 +1,4 @@
-<section id="footer"style="background:url(images/21.jpg);  border-bottom: solid 2px #fbca00;  border-top: solid 2px #fbca00;">
+<section id="footer">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 mt-3 mt-sm-3">

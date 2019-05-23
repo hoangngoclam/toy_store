@@ -29,7 +29,7 @@
                             <textarea class="form-control" rows="3" id="comment" name="request"></textarea>
                         </div>
                         <div class="form-group">
-                            <h4>Tổng tiền: <span>300.000đ</span> </h4>
+                            <h4>Tổng tiền: <span id="tong-gia">300.000đ</span> </h4>
                         </div>
                         <div class="form-group">
                             <button type="submit" id="btn-dang-ky" class="btn btn-block float-right btn-warning">
@@ -43,4 +43,12 @@
             </div>
         </div>
     </div>
+    @endsection
+    @section('js')
+       <script>
+           $(document).ready(function () {
+               var tongGia = localStorage.getItem("tongGia");
+               $('#tong-gia').text(tongGia);
+           });
+       </script> 
     @endsection

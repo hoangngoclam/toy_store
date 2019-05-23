@@ -26,7 +26,7 @@ class TrangChuController extends Controller
     }
     public function getTrangChu()
     {
-        $sanphams = DB::table('san_pham')->paginate(15);
+        $sanphams = DB::table('san_pham')->paginate(18);
         $data=["sanpham"=>$sanphams,"key"=>""];
         return view('trangChu')->with($data);
     }
