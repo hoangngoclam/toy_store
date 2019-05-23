@@ -49,7 +49,10 @@ class TrangChuController extends Controller
             $donhang = HoaDon::where("id_kh", "=", $user->id)->where("trang_thai", "=", self::TrangThaiDangChon)->first();
             if($donhang){
                 $dssp = DanhSachSP::where("id_hd", "=", $donhang->id)->get();
-                if($dssp){
+                if(count($dssp) == 0){
+                    $request->session()->put("number_product", 0);
+                }
+                else if($dssp){
                     $request->session()->put("number_product", count($dssp));
                 }
             }

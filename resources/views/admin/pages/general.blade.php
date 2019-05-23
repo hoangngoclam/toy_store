@@ -19,7 +19,7 @@
             </a>
         </div>
         <div class="col-md-3 pointer">
-            <a class="card bg-success item-general"  href="admin/ds_kieu_sp">
+            <a class="card bg-warning item-general"  href="admin/ds_kieu_sp">
                 <div class="card-body">
                     <h5 class="card-title">Danh mục</h5>
                     <p class="card-text">Quản lý danh mục sản phẩm</p>

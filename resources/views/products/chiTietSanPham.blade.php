@@ -14,10 +14,10 @@
                         </div>
                         <div class="product_gallery_thumbnails">
                             <ol class="thumbnails_image_list list-unstyled">
-                                <li><div class="small_image" data-image="https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg" style="background-image:url('https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg"></div></li>
                                 <li><div class="small_image" data-image="{{$sanpham->hinh_anh}}" style="background-image:url('{{$sanpham->hinh_anh}}')"></div></li>
-                                <li><div class="small_image" data-image="{{$sanpham->hinh_anh}}" style="background-image:url('{{$sanpham->hinh_anh}}')"></div></li>
-                                <li><div class="small_image" data-image="{{$sanpham->hinh_anh}}" style="background-image:url('{{$sanpham->hinh_anh}}')"></div></li>
+                                <li><div class="small_image" data-image="https://sc01.alicdn.com/kf/HTB1n9QPc.OWBKNjSZKzq6xfWFXam/230002065/HTB1n9QPc.OWBKNjSZKzq6xfWFXam.jpg" style="background-image:url('https://sc01.alicdn.com/kf/HTB1n9QPc.OWBKNjSZKzq6xfWFXam/230002065/HTB1n9QPc.OWBKNjSZKzq6xfWFXam.jpg')"></div></li>                                
+                                <li><div class="small_image" data-image="https://linhanhkids.com/wp-content/uploads/2017/10/doi-ky-su-tai-ba-xe_xuc-anto-linhanhkids.1..jpg" style="background-image:url('https://linhanhkids.com/wp-content/uploads/2017/10/doi-ky-su-tai-ba-xe_xuc-anto-linhanhkids.1..jpg')"></div></li>
+                                <li><div class="small_image" data-image="https://media3.scdn.vn/img2/2018/8_21/do-choi-robocar-poli-robot-canh-sat-1m4G3-pVk0xj_simg_ab1f47_350x350_maxb.jpg" style="background-image:url('https://media3.scdn.vn/img2/2018/8_21/do-choi-robocar-poli-robot-canh-sat-1m4G3-pVk0xj_simg_ab1f47_350x350_maxb.jpg')"></div></li>
                             </ol>
                         </div>
                     </div>
@@ -123,7 +123,7 @@
                     </div>
                     <hr style="margin-top:23px;margin-bottom:24px;">
                     <div style="display:flex">
-                            <a class="btn btn-danger btn_them" href="./gio_hang/them_sp/{{ $sanpham->id }}" type="button"> Thêm vào giỏ <i class="fas fa-cart-plus" style="margin-right:8px;"></i></a>
+                            <a class="btn btn-danger btn_them w-100" href="./gio_hang/them_sp/{{ $sanpham->id }}" type="button"> Thêm vào giỏ <i class="fas fa-cart-plus" style="margin-right:8px;"></i></a>
                             {{-- <button class="btn btn-danger btn_mua" type="button">Mua ngay</button> --}}
                     </div>
                 </div>

@@ -121,7 +121,7 @@
         </div>
         <div class="col-xs-4 col-sm-12 col-md-4 col-lg-4 col-xm-4 col_y">
                 <div class="col_left">
-                    <img src="./img/r.png" alt="" style="width:90%">
+                    <img src="./img/R.png" alt="" style="width:90%">
                 </div>   
                 <div class="col_right">
                     <p><span>Bảo đảm đúng 100% chất liệu đồ chơi</span></p>

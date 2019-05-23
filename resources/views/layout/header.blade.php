@@ -72,9 +72,15 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+           
             <div id="my-nav" class="collapse navbar-collapse " style="width:100%">
                 <ul class="navbar-nav mr-auto " style="width:78%">
-
+                    {{-- <li class="nav-item border_item li_width">
+                        <a class="nav-link  " href="#"> <button type="button"
+                                class="btn btn-warning btn_witdth"><i class="fas fa-house-damage m-1"></i>Trang
+                                chủ</button>
+                        </a>
+                    </li> --}}
                     <li class="nav-item border_item li_width">
                         <div class="nav-link  ">
                             <button class="btn btn-warning dropdownn btn_witdth" style="padding-left:0px;">
@@ -100,12 +106,7 @@
                     </div>
                     </li>
 
-                    {{-- <li class="nav-item border_item li_width">
-                        <a class="nav-link  " href="#"> <button type="button"
-                                class="btn btn-outline-warning btn_witdth"><i class="fas fa-house-damage m-1"></i>Trang
-                                chủ</button>
-                        </a>
-                    </li> --}}
+                    
 
                     <li class="nav-item border_item li_width">
                         <a class="nav-link " href="#"> <button type="button"
