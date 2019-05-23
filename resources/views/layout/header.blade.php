@@ -100,12 +100,12 @@
                     </div>
                     </li>
 
-                    <li class="nav-item border_item li_width">
+                    {{-- <li class="nav-item border_item li_width">
                         <a class="nav-link  " href="#"> <button type="button"
                                 class="btn btn-outline-warning btn_witdth"><i class="fas fa-house-damage m-1"></i>Trang
                                 chủ</button>
                         </a>
-                    </li>
+                    </li> --}}
 
                     <li class="nav-item border_item li_width">
                         <a class="nav-link " href="#"> <button type="button"
