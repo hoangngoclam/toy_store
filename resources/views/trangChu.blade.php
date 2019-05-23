@@ -82,7 +82,7 @@
                     <p class="card-title mb-0">{{$item->ten}}</p>
                     <h6 class="card_body_h6">{{ number_format($item->gia_ban ,0, ',', '.')}}₫</h6>
                     <span class="card_body_span1">{{number_format($item->gia_nhap ,0, ',', '.')}}₫</span>
-                    <span class="card_body_span2">-44%</span>
+                    <span class="card_body_span2">-{{ abs(100 - round((number_format($item->gia_ban ,0, ',', '.') / number_format($item->gia_nhap ,0, ',', '.'))*100))  }}%</span>
                     <a href="./gio_hang/them_sp/{{ $item->id }}" class="btn btn-outline-primary btn-sm card_body_a">Thêm vào <i
                             class="fas fa-cart-plus mr-2"></i></a>
                 </div>

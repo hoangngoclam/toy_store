@@ -53,7 +53,9 @@ class TrangChuController extends Controller
                     $request->session()->put("number_product", count($dssp));
                 }
             }
-            $request->session()->put("number_product", 0);
+            else{
+                $request->session()->put("number_product", 0);
+            }
             $request->session()->put('khachhang', $user);
             return Redirect("/")->with("user", $user);
         } else {
@@ -116,7 +118,7 @@ class TrangChuController extends Controller
     {
         DanhSachSP::where("id_sp", "=", $id)->delete();
         request()->session()->put("number_product", $request->session()->get('number_product') - 1);
-        return Redirect('./gio_hang/' . session()->get('khachhang')->id);
+        return Redirect('./gio_hang/chi_tiet/' . session()->get('khachhang')->id);
     }
 
     public function getThemSanPham($id, Request $request)

@@ -36,10 +36,11 @@
             </div>
             <div class="col-8 col-sm-8 col-md-7 col-lg-8 col-xm-8"
                 style="display: flex; align-items: center; position: relative ;">
-                <form class="form-inline input-group-lg" style="width: 100%;">
-                    <input class=" form-control mr-sm-6" type="text" placeholder="Tìm kiếm sản phẩm..."
+                <form class="form-inline input-group-lg" style="width: 100%;" method="GET" action="./tim_kiem">
+                    {{ csrf_field() }}
+                    <input class=" form-control mr-sm-6" type="text" name="key" placeholder="Tìm kiếm sản phẩm..."
                         style="width: 100%">
-                    <button type=" button" class="btn btn-warning btn_search btn-lg "
+                    <button type="submit" class="btn btn-warning btn_search btn-lg "
                         style="padding-left:8px; padding-right:8px"><i class="fas fa-search mr-2"></i>Tìm kiếm</button>
                 </form>
             </div>
@@ -53,7 +54,7 @@
                     <span id="number_product" class="badge badge-dark ml-1">{{ Session::get('number_product') }}</span>
                 </a>
                 @else
-                <a class="btn btn-warning btn-lg" style="padding-left:7px; padding-right:7px" href="./gio_hang/1">
+                <a class="btn btn-warning btn-lg" style="padding-left:7px; padding-right:7px" href="./gio_hang/chi_tiet/1">
                     <i class="fas fa-cart-plus mr-1"></i>
                     Giỏ hàng
                     <span class="badge badge-dark ml-1">0</span>
@@ -118,7 +119,7 @@
                                 chạy</button></a>
                     </li>
                     <li class="nav-item border_item li_width">
-                        <a class="nav-link " href="contact.html"><button type="button"
+                        <a class="nav-link " href="#"><button type="button"
                                 class="btn btn-outline-warning btn_witdth"><i class="fab fa-themeisle m-1"></i>Khuyến
                                 mãi</button></a>
                     </li>

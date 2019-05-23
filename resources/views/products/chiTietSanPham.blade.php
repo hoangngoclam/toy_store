@@ -101,7 +101,7 @@
                     <div class="alert alert-secondary" role="alert">
                             <span class="gia">{{ number_format($sanpham->gia_nhap ,0, ',', '.') }}₫</span>
                             <span class="giamGia">{{ number_format($sanpham->gia_ban ,0, ',', '.') }}₫</span>
-                            <span class="badge badge-danger ">GIẢM 44%</span>
+                            <span class="badge badge-danger ">GIẢM {{ 100 - round((number_format($sanpham->gia_ban ,0, ',', '.') / number_format($sanpham->gia_nhap ,0, ',', '.'))*100)  }}%</span>
                     </div>
 
                     <hr style="margin-bottom:5px;">     
@@ -124,7 +124,7 @@
                     <hr style="margin-top:23px;margin-bottom:24px;">
                     <div style="display:flex">
                             <a class="btn btn-danger btn_them" href="./gio_hang/them_sp/{{ $sanpham->id }}" type="button"> Thêm vào giỏ <i class="fas fa-cart-plus" style="margin-right:8px;"></i></a>
-                            <button class="btn btn-danger btn_mua" type="button">Mua ngay</button>
+                            {{-- <button class="btn btn-danger btn_mua" type="button">Mua ngay</button> --}}
                     </div>
                 </div>
             </div>
