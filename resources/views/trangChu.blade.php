@@ -29,21 +29,21 @@
                         </ul>
                         <div class="carousel-inner">
                           <div class="carousel-item active">
-                            <img src="./img/5.PNG" alt="" width="100%">
+                            <img src="./img/5.png" alt="" width="100%">
                             <div class="carousel-caption">
                               {{-- <h3>Máy bay trực thăng</h3>
                               <p>Siêu khuyến mãi, siêu ưu đãi</p> --}}
                             </div>   
                           </div>
                           <div class="carousel-item">
-                            <img src="./img/6.PNG" alt="" width="100%">
+                            <img src="./img/6.png" alt="" width="100%">
                             <div class="carousel-caption">
                               {{-- <h3>Moto Ducati</h3>
                               <p>Giảm 30%, giá khuyến mãi chỉ có ở ToyStore</p> --}}
                             </div>   
                           </div>
                           <div class="carousel-item">
-                            <img src="./img/7.PNG" alt="" width="100%">
+                            <img src="./img/7.png" alt="" width="100%">
                             <div class="carousel-caption">
                               {{-- <h3>Xe điều khiển</h3>
                               <p>Mua sản phẩm, quà tặng siêu hấp dẫn</p> --}}
@@ -64,7 +64,7 @@
         
                       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xm-4 px-1">
                         <div class="image_hot">
-                                <img src="./img/15.PNG" alt="" class="image_img" >
+                                <img src="./img/15.png" alt="" class="image_img" >
                         </div>
                         
                     </div>
