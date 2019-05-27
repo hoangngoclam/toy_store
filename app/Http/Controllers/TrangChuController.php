@@ -75,6 +75,7 @@ class TrangChuController extends Controller
         $user->mat_khau = $request->password;
         $user->save();
         $request->session()->put('khachhang', $user);
+        $request->session()->put("number_product", 0);
         return Redirect("/")->with("user", $user);
     }
 
