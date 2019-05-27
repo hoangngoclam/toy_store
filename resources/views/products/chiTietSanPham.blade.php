@@ -101,7 +101,7 @@
                     <div class="alert alert-secondary" role="alert">
                             <span class="gia">{{ number_format($sanpham->gia_nhap ,0, ',', '.') }}₫</span>
                             <span class="giamGia">{{ number_format($sanpham->gia_ban ,0, ',', '.') }}₫</span>
-                            <span class="badge badge-danger ">GIẢM {{ 100 - round((number_format($sanpham->gia_ban ,0, ',', '.') / number_format($sanpham->gia_nhap ,0, ',', '.'))*100)  }}%</span>
+                            <span class="badge badge-danger ">GIẢM {{ 100 - abs(round((number_format($sanpham->gia_ban ,0, ',', '.') / number_format($sanpham->gia_nhap ,0, ',', '.'))*100)) }}%</span>
                     </div>
 
                     <hr style="margin-bottom:5px;">     
@@ -117,7 +117,7 @@
                     <div style="display:flex;margin-top:8px;">
                          
                         <button type="button" class="btn btn-primary btn_x">-</button>
-                        <input type="text" class="form-control input_x" value="1">
+                        <input type="text" class="form-control input_x" value="1" disabled>
                         <button type="button" class="btn btn-primary btn_x">+</button>
                         <span class="sanPham">380 sản phẩm có sẵn <i class="fas fa-check-double" style="color:green"></i></span>
                     </div>

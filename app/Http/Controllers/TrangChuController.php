@@ -103,7 +103,7 @@ class TrangChuController extends Controller
             $tongTien = 0;
 
             foreach ($dssp as $value) {
-                $tongTien += $value->sanpham->gia_ban;
+                $tongTien += ($value->sanpham->gia_ban * $value->so_luong);
             }
             $data = ["dssp" => $dssp, "tongTien" => $tongTien];
             return view('products/gioHang')->with($data);
@@ -156,14 +156,14 @@ class TrangChuController extends Controller
                 $dsspChon[0]->save();
             }
         } 
-        return Redirect('gio_hang/' . session()->get('khachhang')->id);
+        return Redirect('gio_hang/chi_tiet/' . session()->get('khachhang')->id);
     }
     public function getThongTinGiaoHang($id){
         $hoadon = HoaDon::find($id);
         $dsspChon = DanhSachSP::where("id_hd", "=", $hoadon->id)->get();
         $tongTien = 0;
         foreach ($dsspChon as $key => $item) {
-            $tongTien += $item->sanpham->gia_ban;
+            $tongTien += ($item->sanpham->gia_ban * $item->so_luong);
         }
         $hoadon->tong_tien = $tongTien;
         $hoadon->save();

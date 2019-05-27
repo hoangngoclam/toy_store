@@ -30,7 +30,7 @@
 @endsection
 @section('content')
     <div class="container-fluid" id="pay">
-        <div class="row">
+        <div class="row" style="min-height:300px">
             @if (count($dssp) == 0)
                 <div class="col-md-12 ">
             @else
@@ -69,7 +69,7 @@
     
                             <div class=" col-xs-6 col-sm-12 col-md-5 col-lg-3 col-xm-3 tinhTien">
                                 <div>
-                                    <span class="gia">{{number_format($item->sanpham->gia_ban ,0, ',', '.')  }}₫</span>
+                                    <span class="gia">{{number_format($item->sanpham->gia_ban * $item->so_luong ,0, ',', '.')  }}₫</span>
                                     <br>
                                     <span
                                         class="giamGia">{{number_format($item->sanpham->gia_nhap ,0, ',', '.')   }}₫</span>
@@ -77,12 +77,12 @@
                                         class="bangGiamGia">-44%</span>
                                 </div>
                                 <div style="display:flex; margin-top: 7px">
-                                    <button type="button" class="btn btn-primary"
-                                        style="width:35px;height:35px; background: white;border-radius:0; color: black; font-size: 12px">-</button>
-                                    <input type="text" class="form-control" value={{ $item->so_luong }}
+                                    <a type="button" class="btn btn-primary" href="./gio_hang/giam_sp/{{ $item->sanpham->id }}"
+                                        style="width:35px;height:35px; background: white;border-radius:0; color: black; font-size: 12px">-</a>
+                                    <input type="text" class="form-control" disabled value={{ $item->so_luong }}
                                         style="width:50px; height:35px; text-align: center;border-left:0;border-right:0; border-color: #007bff; border-radius: 0">
-                                    <button type="button" class="btn btn-primary"
-                                        style="width:35px;height:35px; background: white;border-radius:0;color: black">+</button>
+                                    <a type="button" class="btn btn-primary" href="./gio_hang/them_sp/{{ $item->sanpham->id }}"
+                                        style="width:35px;height:35px; background: white;border-radius:0;color: black">+</a>
     
                                 </div>
     
