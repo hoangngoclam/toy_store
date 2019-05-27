@@ -142,7 +142,7 @@ class TrangChuController extends Controller
             HoaDon::insertGetId(["id_kh" => session()->get('khachhang')->id, "trang_thai" => self::TrangThaiDangChon]);
             DanhSachSP::insertGetId(["id_hd" => $hoadon[0]->id, "id_sp" => $id, "so_luong" => 1]);
         }
-        return Redirect('./chi_tiet_sp/' . $id);
+        return Redirect('gio_hang/chi_tiet/'.session()->get('khachhang')->id);
     }
     public function getDecreaseProduct($id){ //id sản phẩm
         $hoadon = HoaDon::where("id_kh", "=", session()->get('khachhang')->id)->where("trang_thai", "=", self::TrangThaiDangChon)->get();
