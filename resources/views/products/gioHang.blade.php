@@ -74,7 +74,7 @@
                                     <span
                                         class="giamGia">{{number_format($item->sanpham->gia_nhap ,0, ',', '.')   }}₫</span>
                                     <span class="badge badge-danger"
-                                        class="bangGiamGia">-44%</span>
+                                        class="bangGiamGia">{{ 100 - abs(round((number_format($item->sanpham->gia_ban ,0, ',', '.') / number_format($item->sanpham->gia_nhap ,0, ',', '.'))*100)) }}%</span>
                                 </div>
                                 <div style="display:flex; margin-top: 7px">
                                     <a type="button" class="btn btn-primary" href="./gio_hang/giam_sp/{{ $item->sanpham->id }}"
