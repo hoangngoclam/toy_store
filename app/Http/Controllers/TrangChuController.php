@@ -140,8 +140,8 @@ class TrangChuController extends Controller
                 request()->session()->put("number_product", $request->session()->get('number_product') + 1);
             }
         } else {
-            HoaDon::insertGetId(["id_kh" => session()->get('khachhang')->id, "trang_thai" => self::TrangThaiDangChon]);
-            DanhSachSP::insertGetId(["id_hd" => $hoadon[0]->id, "id_sp" => $id, "so_luong" => 1]);
+            $idHD = HoaDon::insertGetId(["id_kh" => session()->get('khachhang')->id, "trang_thai" => self::TrangThaiDangChon]);
+            DanhSachSP::insertGetId(["id_hd" => $idHD, "id_sp" => $id, "so_luong" => 1]);
         }
         return Redirect('gio_hang/chi_tiet/'.session()->get('khachhang')->id);
     }
