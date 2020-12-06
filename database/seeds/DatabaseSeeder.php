@@ -37,17 +37,7 @@ class DatabaseSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ]);
         }
-        for ($i = 0; $i <= 100; $i++) {
-            DB::table('khach_hang')->insert([
-                'ten' => str_random(10),
-                'email' => str_random(8) . '@gmail.com',
-                'sdt' => '0978228963',
-                'mat_khau'=> '123',
-                'dia_chi' => str_random(100) . ' Đà Lạt, Lâm Đồng.',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ]);
-        }
+       
         for ($i = 0; $i <= 10; $i++) {
             DB::table('nha_cung_cap')->insert([
                 'ten' => str_random(10),
@@ -65,7 +55,7 @@ class DatabaseSeeder extends Seeder
                 'chat_lieu_chinh' => str_random(4),
                 'xuat su' => str_random(10),
                 'so_luong' => rand(1, 100),
-                'hinh_anh' => 'https://media.bibomart.net/u/bbm/product/2015/08/25/17/48/410_410/360215_xe_3_banh_cho_be_1.jpg',
+                'hinh_anh' => 'https://sudospaces.com/babycuatoi/2020/06/zk1056-nha-choi-cau-truot-2-khoang-cho-be.jpg',
                 'gia_ban' => rand(10000, 1000000),
                 'gia_nhap' => rand(10000, 1000000),
                 'so_lan_xem' => rand(1, 1000),
@@ -73,28 +63,47 @@ class DatabaseSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ]);
         }
-        for ($i = 0; $i <= 20; $i++) {
-            DB::table('hoa_don')->insert([
-                'id_kh' => rand(1, 100),
-                'trang_thai' => 'ĐA_GIAO',
-                'yeu_cau' => "Không có yêu cầu gì thêm",
-                'tong_tien' => rand(10000, 1000000),
-                'noi_nhan' => str_random(20),
-                'so_dien_thoai_nhan' => '02092332309',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ]);
-        }
-        for ($i = 0; $i <= 10; $i++) {
-            DB::table('danh_sach_sp')->insert([
-                'id_sp' => rand(1, 100),
-                'id_hd' => rand(1, 100),
-                'so_luong' => rand(1, 30),
-                'trang_thai' => 'ĐA_GIAO',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ]);
-        }
+        DB::table('admin')->insert([
+            'ten'=>'admin',
+            'mat_khau'=>'admin',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+        // for ($i = 0; $i <= 100; $i++) {
+        //     DB::table('khach_hang')->insert([
+        //         'ten' => str_random(10),
+        //         'email' => str_random(8) . '@gmail.com',
+        //         'sdt' => '0978228963',
+        //         'mat_khau'=> '123',
+        //         'dia_chi' => str_random(100) . ' Đà Lạt, Lâm Đồng.',
+        //         'created_at' => Carbon::now(),
+        //         'updated_at' => Carbon::now(),
+        //     ]);
+        // }
+
+
+        // for ($i = 0; $i <= 20; $i++) {
+        //     DB::table('hoa_don')->insert([
+        //         'id_kh' => rand(1, 100),
+        //         'trang_thai' => 'ĐA_GIAO',
+        //         'yeu_cau' => "Không có yêu cầu gì thêm",
+        //         'tong_tien' => rand(10000, 1000000),
+        //         'noi_nhan' => str_random(20),
+        //         'so_dien_thoai_nhan' => '02092332309',
+        //         'created_at' => Carbon::now(),
+        //         'updated_at' => Carbon::now(),
+        //     ]);
+        // }
+        // for ($i = 0; $i <= 10; $i++) {
+        //     DB::table('danh_sach_sp')->insert([
+        //         'id_sp' => rand(1, 100),
+        //         'id_hd' => rand(1, 100),
+        //         'so_luong' => rand(1, 30),
+        //         'trang_thai' => 'ĐA_GIAO',
+        //         'created_at' => Carbon::now(),
+        //         'updated_at' => Carbon::now(),
+        //     ]);
+        // }
 
     }
 }

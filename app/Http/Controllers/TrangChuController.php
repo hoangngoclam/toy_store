@@ -73,6 +73,8 @@ class TrangChuController extends Controller
         $user->ten = $request->user_name;
         $user->email = $request->email;
         $user->mat_khau = $request->password;
+        $user->dia_chi = "Mặc định";
+        $user->sdt = "00.00000000";
         $user->save();
         $request->session()->put('khachhang', $user);
         $request->session()->put("number_product", 0);
