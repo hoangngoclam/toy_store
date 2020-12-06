@@ -18,6 +18,7 @@ khach_hang
     address
     phone number
     password
+    
 san_pham
     name
     id kieu sp
@@ -28,28 +29,35 @@ san_pham
     gia ban
     gia nhap
     so lan xem
+
 danh_muc
     id danh_muc
     ten danh_muc
+
 loai_sp
     id loai sp
     id danh muc
     ten loai
+
 kieu_sp
     id kieu sp
     id loai_sp
     ten kieu_sp
+
 danh_sach_sp
     id_sp
     id_khach_hang
     id_hoadon
+    so_luong
     trang thai
+
 hoa_don
     id
     id_khach_hang
     trang thai
     yeu cau cua khach_hang
     tong tien
+
 nha_cung_cap
     id
     ten

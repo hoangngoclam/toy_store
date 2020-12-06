@@ -1,0 +1,120 @@
+/* pay */
+
+#pay {
+    margin-top: 20px;
+    margin-bottom: 20px
+}
+
+#pay.row {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#pay .sanPhamm {
+    margin-top: 27px;
+    margin-bottom: 27px
+}
+
+#pay .hinhAnh {
+    background-image: url('../images/7.jpg');
+    height: 103px;
+    width: 120px;
+    background-position: center;
+    background-size: cover;
+}
+
+#pay .gioiThieu {
+    margin-top: 27px;
+    margin-bottom: 27px;
+}
+
+#pay .tenSP {
+    font-size: 16px
+}
+
+#pay .soLuongSP {
+    font-size: 14px;
+    color: green
+}
+
+#pay .nguonSP {
+    font-size: 14px
+}
+
+.tinhTien {
+    margin-top: 27px;
+}
+
+.tinhTien .gia {
+    color: #ee4d2d;
+    font-size: 25px
+}
+
+.tinhTien .giamGia {
+    text-decoration: line-through;
+    margin-top: 0px;
+    font-size: 15px;
+    color: #9e9e9e;
+}
+
+.tinhTien .bangGiamGia {
+    font-size: 13px;
+    background: #ee4d2d;
+    padding-bottom: 1px;
+    padding-top: 3px;
+    width: 40px;
+    margin-bottom: 5px;
+}
+
+.tamTinh {
+    margin-top: 27px;
+    margin-left: 10px;
+}
+
+.tamTinh .nhan {
+    font-style: bold
+}
+
+.tamTinh .gia {
+    float: right
+}
+
+.thanhTien {
+    margin-top: 3x;
+    margin-left: 10px;
+}
+
+.thanhTien .icon {
+    font-size: 29px;
+    color: green;
+}
+
+.thanhTien .gia {
+    color: #ee4d2d;
+    font-size: 27px;
+    float: right;
+}
+
+.btn_tinhTien {
+    background: #ee4d2d;
+    height: 50px;
+    margin-bottom: 17px
+}
+/* Gio hang trong */
+.gioHangg{
+    padding-left: 40px;
+    padding-right: 40px
+}
+
+.gioHangg .alert{
+    width: 100%;
+}
+.hinhAnhh{
+    background:url(../images/iconMuaHang.PNG) no-repeat ; 
+    width:280px;
+    height:220px; 
+    margin:auto;
+}
+.btn_tiepTucMuaSam{
+    margin-left:100px;
+}
